@@ -1,14 +1,9 @@
 package com.bdd.utils;
-import static com.bdd.utils.GlobalSelectors.HEADER_AUTOCOMPLET_ELEMENT;
-import static com.bdd.utils.GlobalSelectors.HEADER_SEARCH_BTN;
-import static com.bdd.utils.ReusableFunctionalities.Click;
-//import static com.bdd.utils.GlobalSelectors.*;
+import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.variables.GlobalVariables.*;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReusableFunctionalities {
 

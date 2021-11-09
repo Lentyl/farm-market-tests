@@ -1,5 +1,4 @@
 package com.bdd.pages;
-import static com.bdd.utils.GlobalSelectors.*;
 
 import org.openqa.selenium.By;
 
