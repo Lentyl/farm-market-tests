@@ -1,5 +1,5 @@
 package com.bdd.impl;
-import static com.bdd.utils.WebDriverUtils.getDriver;
+import static com.bdd.utils.WebDriverUtils.*;
 import static com.bdd.variables.GlobalVariables.*;
 
 public class AppAccess {
@@ -7,6 +7,7 @@ public class AppAccess {
 	public static void accessApp() {
 		if(gdriver == null || gdriver.toString().contains("null")) {
 			gdriver = getDriver();
+			wait = getWait();
 		}
 	}
 	

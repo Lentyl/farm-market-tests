@@ -22,10 +22,7 @@ public class ReusableFunctionalities {
 	}
 	
 	public static String GetText(By el) {
-		WebDriverWait wait = new WebDriverWait(gdriver,30);
-		String str = wait.until(ExpectedConditions.visibilityOfElementLocated(el)).getText();
-		System.out.println("coś tam !!!!!!"+ str);
-		return str;
+		return gwait.until(ExpectedConditions.visibilityOfElementLocated(el)).getText();
 	}
 	
 	public static void headerAutocomplitChoyce() {
