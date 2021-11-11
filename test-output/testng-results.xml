@@ -1,27 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-09T19:25:39 CET" name="Default suite" finished-at="2021-11-09T19:25:43 CET" duration-ms="4332">
+  <suite started-at="2021-11-11T23:30:05 CET" name="Default suite" finished-at="2021-11-11T23:30:15 CET" duration-ms="10124">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@47404bea]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-11-09T19:25:39 CET" name="Default test" finished-at="2021-11-09T19:25:43 CET" duration-ms="4332">
+    <test started-at="2021-11-11T23:30:05 CET" name="Default test" finished-at="2021-11-11T23:30:15 CET" duration-ms="10124">
       <class name="com.bdd.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@47404bea]" started-at="2021-11-09T19:25:39 CET" name="setUpClass" finished-at="2021-11-09T19:25:39 CET" duration-ms="32" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:05 CET" name="setUpClass" finished-at="2021-11-11T23:30:05 CET" duration-ms="44" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2a367e93]]>
+                <![CDATA[org.testng.TestRunner@72bdd7c7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@47404bea]" started-at="2021-11-09T19:25:39 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-09T19:25:43 CET" duration-ms="3987" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:05 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:12 CET" duration-ms="7088" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["CheckAllLinks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:12 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:13 CET" duration-ms="295" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["CheckAllLinks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:13 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:13 CET" duration-ms="164" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["CheckAllLinks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:13 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:13 CET" duration-ms="203" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["CheckAllLinks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:13 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:13 CET" duration-ms="496" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["CheckAllLinks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:13 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:15 CET" duration-ms="1126" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,22 +114,26 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "com.bdd.variables.GlobalVariables.gwait" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "com.bdd.variables.GlobalVariables.gwait" is null
-at com.bdd.utils.ReusableFunctionalities.GetText(ReusableFunctionalities.java:25)
-at com.bdd.steps.HomePageSteps.product_description_appears_on_the_page(HomePageSteps.java:28)
-at ✽.Product description appears on the page(file:///C:/Users/Marian/Desktop/automatyzacja/java/project/TestCucumberJavaFarmMarket/src/test/resources/features/HomePage.feature:9)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@47404bea]" started-at="2021-11-09T19:25:43 CET" name="tearDownClass" finished-at="2021-11-09T19:25:43 CET" duration-ms="262" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:15 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-11-11T23:30:15 CET" duration-ms="486" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["searchForProductNoOneHave"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Home Page features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.bdd.runner.TestRunner@a5b0b86]" started-at="2021-11-11T23:30:15 CET" name="tearDownClass" finished-at="2021-11-11T23:30:15 CET" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
