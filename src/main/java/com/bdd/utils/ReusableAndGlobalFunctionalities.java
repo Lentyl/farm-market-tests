@@ -3,11 +3,27 @@ import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.variables.GlobalVariables.*;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class ReusableAndGlobalFunctionalities {
+	
+	public static void Sleep(int sec) throws InterruptedException {
+		Thread.sleep(sec);
+	}
 
+	public static void ScrollToElement(By el) {
+		gjs.executeScript("arguments[0].scrollIntoView(true);",gdriver.findElement(el));
+	}
+	
+	public static void ScrollToBottom() {
+		gjs.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+	
+	public static void Scroll(int x, int y) {
+		gjs.executeScript("window.scrollBy("+x+","+y+")","");
+	}
 	
 	public static void Click(By el) {
 		gwait.until(ExpectedConditions.visibilityOfElementLocated(el)).click();	

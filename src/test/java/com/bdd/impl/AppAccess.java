@@ -11,6 +11,10 @@ public class AppAccess {
 		if(gwait == null || gwait.toString().contains("null")) {
 			gwait = getWait();
 		}	
+		if(gjs == null || gjs.toString().contains("null")) {
+			gjs = getJs();
+		}
+		
 	}
 	
 	public static void openUrl() {

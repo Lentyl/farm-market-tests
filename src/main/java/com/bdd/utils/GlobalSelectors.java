@@ -16,4 +16,7 @@ public class GlobalSelectors {
 	public static By HEADER_CART_LINK = By.cssSelector("a[href='/cart']");
 	public static By HEADER_LOGO_LINK = By.cssSelector("a[href='/']:nth-child(1)");
 	public static By HEADER_LOGO_INSCRIPTION_LINK = By.cssSelector("a[href='/']:nth-child(2)");
+	
+	//reusable global selectors
+	public static By Add_Cart_BUTTON = By.className("search__add-item-btn");
 }

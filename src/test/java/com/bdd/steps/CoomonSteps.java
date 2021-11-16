@@ -1,13 +1,14 @@
 package com.bdd.steps;
 
 import static com.bdd.impl.AppAccess.*;
-import static com.bdd.utils.GlobalSelectors.HEADER_AUTOCOMPLETE_INPUT;
-import static com.bdd.utils.ReusableAndGlobalFunctionalities.SendKeys;
+import static com.bdd.utils.GlobalSelectors.*;
+import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.headerAutocomplitChoyce;
 import static com.bdd.variables.GlobalVariables.*;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CoomonSteps {
@@ -19,13 +20,18 @@ public class CoomonSteps {
 		openUrl();
 	}
 	
-	//set 1
-	@When("User type {string} name")
-	public void user_type_product_name(String product) {
+	@When("User types {string} name")
+	public void user_types_product_name(String product) {
 		SendKeys(HEADER_AUTOCOMPLETE_INPUT, product);
 	}
+	
 	@And("Choose product")
 	public void click_on_search_button() {
 		headerAutocomplitChoyce();
+	}
+	
+	@Then("Navigate to the home page")
+	public void navigate_to_the_home_page() {
+		Click(HEADER_LOGIN_LINK);
 	}
 }
