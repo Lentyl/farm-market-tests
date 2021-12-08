@@ -1,4 +1,4 @@
-@homePageFeatures
+@allAppFeatures @homePageFeatures 
 Feature: Home Page features
 
   @checkAllLinks
@@ -49,9 +49,10 @@ Feature: Home Page features
   Scenario Outline: Check seller, product details, Log out and cart icon number on home page
     Given User navigates to the application
     When User clicks on the "<link>"
-   	And  Log in 
-    Then Navigate to the home page 
-    And User types "<product>" name
+   	And  Log in with correct credential
+    Then Navigate to the home page
+   	When User types "<product>" name
+   	And Choose product
     Then Clicks on the product details button 
     When User is send to product seller details tab
     And Checks, if backward button works
@@ -59,9 +60,8 @@ Feature: Home Page features
     And Add products to cart, one of each kind
     Then Checks, if cart logo number is updated correctly
     And Clicks on log out button
-    Then Checks if logo button, changed on sign in and sign up dropdown tab
+    Then Check if there is sign in and sign up dropdown tab
     
         Examples: 
       | link   | product |
       | login  | jabłko  |
-

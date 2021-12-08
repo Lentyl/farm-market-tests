@@ -16,7 +16,12 @@ public class GlobalSelectors {
 	public static By HEADER_CART_LINK = By.cssSelector("a[href='/cart']");
 	public static By HEADER_LOGO_LINK = By.cssSelector("a[href='/']:nth-child(1)");
 	public static By HEADER_LOGO_INSCRIPTION_LINK = By.cssSelector("a[href='/']:nth-child(2)");
+	public static By HEADER_CART_LOGO_NUMBER = By.className("header__cart-item-counter"); 
+	public static By HEADER_LOG_OUT_BUTTON = By.className("header__signout-btn");
 	
 	//reusable global selectors
-	public static By Add_Cart_BUTTON = By.className("search__add-item-btn");
+	public static By PRODUCT_DETAILS_BUTTON = By.className("search__details-btn");
+	public static By ADD_TO_CART_BUTTON = By.className("search__add-item-btn");
+	public static By PRODUCT_DETAILS_BACKWARD_BUTTON = By.className("search__backwards-btn");
+	
 }

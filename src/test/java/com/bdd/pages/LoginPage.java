@@ -13,17 +13,11 @@ public class LoginPage {
 	public static By LOGIN_PAGE_CONFIRM_BUTTON = By.className("login__btn");
 	public static By LOGIN_PAGE_WELCOME_INSCRIPTION = By.className("login__title");
 	
-	public static void logInPrivatUser(){
-		SendKeys(LOGIN_PAGE_EMAIL_INP, "many78467@wp.pl");
-		SendKeys(LOGIN_PAGE_PASSWORD_INP, "mariusz22");
-		Click(LOGIN_PAGE_CONFIRM_BUTTON); 
-	}
 	
-	public static void logInSeller() {
-		SendKeys(LOGIN_PAGE_EMAIL_INP, "jarek@wp.pl");
-		SendKeys(LOGIN_PAGE_PASSWORD_INP, "maniek84");
+	public static void logIn(String email, String password) {
+		SendKeys(LOGIN_PAGE_EMAIL_INP, email);
+		SendKeys(LOGIN_PAGE_PASSWORD_INP, password);
 		Click(LOGIN_PAGE_CONFIRM_BUTTON);
 	}
-	
 	
 }

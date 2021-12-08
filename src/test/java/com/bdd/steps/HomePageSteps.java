@@ -17,15 +17,7 @@ import static com.bdd.variables.GlobalVariables.*;
 
 public class HomePageSteps {
 	
-	@When ("User clicks on the {string}")
-	public void user_clicks_on_the_Link(String linkName) {
-		checkAllLinks(linkName);
-	}
-	
-	@Then ("User is send to {string} page")
-	public void user_is_send_to_next_page(String pageName){
-		checkAllPages(pageName);
-	}
+
 	
 	@Then("Product description appears on the page")
 	public void product_description_appears_on_the_page() {
@@ -60,10 +52,9 @@ public class HomePageSteps {
 		//Scroll(0,-10000);
 	}
 	
-	@Then("Clicks on the product details button")
-	public void clicks_on_the_product_details_button() {
-		
-	}
+
+	
+
 	
 	
 	
