@@ -17,7 +17,7 @@ Feature: Product Page features
     Then User is signed in, confirmation inscription appears
 
     Examples: 
-      | link | name     			| productName |
-      |	sell | businessSignUp | kalafior		|
+      | link | name           | productName |
+      |	sell | businessSignUp | kalafior    |
 
 
