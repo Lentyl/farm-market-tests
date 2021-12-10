@@ -19,6 +19,26 @@ public class BusinessSignupPageSteps {
 		businessSignUp("Robert", "robert88", "robert99@gmail.com", "09-100", "Płońsk", "Kopernika 9b/33");
 	}
 	
+	@When("User fill in credentials with empty Name Field")
+	public void user_fill_in_credentials_with_empty_name_field() {
+		businessSignUp("", "robert88", "robert99@gmail.com", "09-100", "Płońsk", "Kopernika 9b/33");
+	}
+	
+	@When("User fill in credentials with empty password Field")
+	public void user_fill_in_credentials_with_empty_password_field() {
+		businessSignUp("Robert", "", "robert99@gmail.com", "09-100", "Płońsk", "Kopernika 9b/33");
+	}
+	
+	@When("User fill in credentials with empty email Field")
+	public void user_fill_in_credentials_with_empty_email_field() {
+		businessSignUp("Robert", "robert88", "", "09-100", "Płońsk", "Kopernika 9b/33");
+	}
+	
+	@When("User fill in credentials with empty postecode Field")
+	public void user_fill_in_credentials_with_empty_postecode_field() {
+		businessSignUp("Robert", "robert88", "robert99@gmail.com", "", "Płońsk", "Kopernika 9b/33");
+	}
+	
 	@And("Add product {string}")
 	public void add_products(String productName) throws InterruptedException {
 		addProduct(productName, "10", "10");
@@ -42,7 +62,6 @@ public class BusinessSignupPageSteps {
 	@When("User clicks submit button")
 	public void user_clicks_submit_button() {
 		Click(B_SIGNIN_PAGE_CONFIRM_BUTTON);
-		AcceptAlert();
 	}
 	
 	@Then("User is signed in, confirmation inscription appears")

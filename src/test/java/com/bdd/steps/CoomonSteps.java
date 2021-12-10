@@ -76,7 +76,14 @@ public class CoomonSteps {
 	public void clicks_on_log_out_button() {
 	  Click(HEADER_LOG_OUT_BUTTON);
 	}
-	@Then("Check if there is sign in and sign up dropdown tab")
+	
+	@And("Accepts alert message")
+	public void Accept_alert_message() {
+		AcceptAlert();
+	}
+	
+	
+	@Then("Checks if there is sign in and sign up dropdown tab")
 	public void checks_if_logo_button_changed_on_sign_in_and_sign_up_dropdown_tab() {
 		Assert.assertEquals("Logowanie/rejestracja", GetText(HEADER_LOGIN_SIGN_UP_DROPDOWN));
 	}
