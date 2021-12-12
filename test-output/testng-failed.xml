@@ -6,7 +6,7 @@
       <class name="com.bdd.runner.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="6 13 14 15 16 19 20 21 22 23 24"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.bdd.runner.TestRunner -->

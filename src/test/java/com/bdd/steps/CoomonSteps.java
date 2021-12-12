@@ -82,7 +82,6 @@ public class CoomonSteps {
 		AcceptAlert();
 	}
 	
-	
 	@Then("Checks if there is sign in and sign up dropdown tab")
 	public void checks_if_logo_button_changed_on_sign_in_and_sign_up_dropdown_tab() {
 		Assert.assertEquals("Logowanie/rejestracja", GetText(HEADER_LOGIN_SIGN_UP_DROPDOWN));

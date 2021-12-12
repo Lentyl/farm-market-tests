@@ -26,15 +26,17 @@ public class BusinessSignupPage {
 	
 
 	
-	public static void businessSignUp(String name, String password, String email, String postcode, String town, String street){
+	public static void businessSignUp(String name, String password, String email, String postcode, String town, String street, boolean... checkbox){
+		
+		boolean clickCheckbox =  checkbox.length > 0 ? (boolean)checkbox[0]  : true;
+		
 		SendKeys(B_SIGNIN_PAGE_NAME_INPUT, name);
 		SendKeys(B_SIGNIN_PAGE_PASSWORD_INPUT, password);
 		SendKeys(B_SIGNIN_PAGE_EMAIL_INPUT, email);
 		SendKeys(B_SIGNIN_PAGE_POSTCODE_INPUT, postcode);
 		SendKeys(B_SIGNIN_PAGE_TOWN_INPUT, town);
 		SendKeys(B_SIGNIN_PAGE_STREET_INPUT, street);
-		Click(B_SIGNIN_PAGE_AGREEMENT_CHECKBOX);
-		
+		if(clickCheckbox)Click(B_SIGNIN_PAGE_AGREEMENT_CHECKBOX);
 	}
 	
 	public static void addProduct(String productName, String price, String weight) throws InterruptedException {
