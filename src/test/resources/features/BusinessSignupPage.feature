@@ -1,4 +1,4 @@
-@allAppFeatures @businessSignupPageFeatures
+@businessSignupPageFeatures
 Feature: Product Page features
 
   @businessSignUpWithoutMarkingConfirmationCheckbox

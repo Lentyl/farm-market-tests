@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static com.bdd.pages.BusinessSignupPage.*;
-import static com.bdd.pages.SigninPage.SIGNIN_PAGE_WELCOME_INSCRIPTION;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.testng.Assert;
@@ -66,26 +65,26 @@ public class BusinessSignupPageSteps {
 	
 	@Then("{string} is added to seller offer, appears on the page")
 	public void product_is_added_to_seller_offer_appears_on_the_page(String productName) {
-		Assert.assertEquals(productName, GetText(B_SIGNIN_NAME_OF_PRODUCT)); 
+		Assert.assertEquals(productName, getText(businessSignUpPageAddedProductName)); 
 	}
 	
 	@When("User clicks red cancel button to delete product")
 	public void user_clicks_red_cancel_button_to_delete_product() {
-		Click(B_SIGNIN_CANCEL_PRODUCT_BUTTON);
+		click(businessSignUpPageCancelProductButton);
 	}
 	
 	@Then("Product disappears from the list")
 	public void product_disappears_from_the_list() {
-		Assert.assertFalse(isDisplayed(B_SIGNIN_CANCEL_PRODUCT_BUTTON)); 
+		Assert.assertFalse(isDisplayed(businessSignUpPageCancelProductButton)); 
 	}
 	
 	@When("User clicks submit button")
 	public void user_clicks_submit_button() {
-		Click(B_SIGNIN_PAGE_CONFIRM_BUTTON);
+		click(businessSignUpPageConfirmButton);
 	}
 	
 	@Then("User is signed in, confirmation inscription appears")
 	public void user_is_signed_in_confirmation_inscription_appears() {
-		Assert.assertEquals("Witamy rejestracja powiodła się.", GetText(B_SIGNIN_TITLE)); 
+		Assert.assertEquals("Witamy rejestracja powiodła się.", getText(businessSignUpPageTitle)); 
 	}
 }

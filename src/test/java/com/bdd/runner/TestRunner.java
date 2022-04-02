@@ -7,7 +7,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 @CucumberOptions(
 features="src/test/resources/features",
 glue="com.bdd.steps",
-tags="@businessSignupPageFeatures",
+tags="@cartPageFeatures",
 plugin={"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"},
 monochrome=true
 )

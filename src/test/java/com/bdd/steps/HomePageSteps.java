@@ -2,37 +2,32 @@ package com.bdd.steps;
 
 import static com.bdd.pages.HomePage.*;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static com.bdd.utils.GlobalSelectors.*;
+
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
-import static com.bdd.variables.GlobalVariables.*;
 
 public class HomePageSteps {
 	
-
-	
 	@Then("Product description appears on the page")
 	public void product_description_appears_on_the_page() {
-		Assert.assertEquals("nazwa: jabłko", GetText(HOME_PAGE_PRODUCT_LIST_ITEM));   
+		Assert.assertEquals("nazwa: jabłko", getText(homePageProductListItem));   
 	}
 	
 	@Then ("No product description appears on the page")
 	public void no_product_description_appears_on_the_page() {
-		Assert.assertEquals("Wyszukaj okazje! Używaj liczby pojedynczej (cebula, truskawka, marchewka).", GetText(HOME_PAGE_EMPTY_PRODUCT_LIST));
+		Assert.assertEquals("Wyszukaj okazje! Używaj liczby pojedynczej (cebula, truskawka, marchewka).", getText(homePageEmtyProductList));
 	}
 	
 	@When("User clicks on left carusel arrow button")
 	public void user_clicks_on_left_carusel_arrow_button(){
-		Scroll(0,10000);
-		Click(HOME_PAGE_CAROUSEL_LEFT_BUTTON);
+		scroll(0,10000);
+		click(homePageCarouselLeftButton);
 	}
 	
 	@Then("Carousel goes left")
@@ -41,21 +36,15 @@ public class HomePageSteps {
 	}
 	
 
-	@When("User clicks on right corusel arrow Button")
+	@And("User clicks on right corusel arrow button")
 	public void user_clicks_on_right_corusel_arrow_button() {
-		Click(HOME_PAGE_CAROUSEL_RIGHT_BUTTON);
+		click(homePageCarouselRightButton);
 	}
 	
-	@Then("carusel goes right")
+	@Then("Carusel goes right")
 	public void carusel_goes_right() throws InterruptedException {
 		Assert.assertEquals("20% taniej", getCurrentHeaderCoureselText());
-		//Scroll(0,-10000);
 	}
-	
-
-	
-
-	
 	
 	
 	//System.out.println(pageName+ " - !!!!!!!!!!!!!!!!!!!!!!!!!");

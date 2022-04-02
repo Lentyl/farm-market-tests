@@ -8,7 +8,7 @@ Feature: Signin Page features
     And Sign in with correct credential
     Then Checks, if he is signed in
     And Clicks on log out button
-    Then Check if there is sign in and sign up dropdown tab
+    Then Checks if there is sign in and sign up dropdown tab
     
     Examples: 
       | link   |
@@ -19,7 +19,7 @@ Feature: Signin Page features
     Given User navigates to the application
     When User clicks on the "<link>"
     And Sign in with the same correct credential
-    Then Check if there is sign in and sign up dropdown tab
+    Then Checks if there is sign in and sign up dropdown tab
     
     Examples: 
       | link   |
@@ -31,7 +31,7 @@ Feature: Signin Page features
     Given User navigates to the application
     When User clicks on the "<link>"
     And Sign in with empty name input
-    Then Check if there is sign in and sign up dropdown tab
+    Then Checks if there is sign in and sign up dropdown tab
     
     Examples: 
       | link   |
@@ -42,7 +42,7 @@ Feature: Signin Page features
     Given User navigates to the application
     When User clicks on the "<link>"
     And Sign in with empty email input
-    Then Check if there is sign in and sign up dropdown tab
+    Then Checks if there is sign in and sign up dropdown tab
     
     Examples: 
       | link   |
@@ -54,7 +54,7 @@ Feature: Signin Page features
     Given User navigates to the application
     When User clicks on the "<link>"
     And Sign in with empty password input
-    Then Check if there is sign in and sign up dropdown tab
+    Then Checks if there is sign in and sign up dropdown tab
     
     Examples: 
       | link   |

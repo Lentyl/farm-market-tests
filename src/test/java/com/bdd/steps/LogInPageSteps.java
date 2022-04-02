@@ -1,8 +1,6 @@
 package com.bdd.steps;
 
-
 import static com.bdd.pages.LoginPage.*;
-import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.testng.Assert;
@@ -21,18 +19,18 @@ public class LoginPageSteps {
 	@And("Log in with incorrect email")
 	public void log_in_with_correct_email() {
 		logIn("jarek88@wp.pl", "maniek84");
-		AcceptAlert();
+		acceptAlert();
 	}
 	
 	@And("Log in with incorrect password")
 	public void log_in_with_correct_password() {
 		logIn("jarek@wp.pl", "maniek8");
-		AcceptAlert();
+		acceptAlert();
 	}
 	
 	@Then("Checks, if he is logged in")
 	public void Check_if_he_is_logged_in() {
-		Assert.assertEquals("Witamy jesteś zalogowany.", GetText(LOGIN_PAGE_WELCOME_INSCRIPTION)); 
+		Assert.assertEquals("Witamy jesteś zalogowany.", getText(LOGIN_PAGE_WELCOME_INSCRIPTION)); 
 	}
 
 }

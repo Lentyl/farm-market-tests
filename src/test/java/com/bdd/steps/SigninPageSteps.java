@@ -20,12 +20,12 @@ public class SigninPageSteps {
 	@And("Sign in with the same correct credential")
 	public void sign_in_with_the_same_correct_credential() {
 		SignIn("Marcin", "marcin1988@gmail.com", "marcin1988");
-		AcceptAlert();
+		acceptAlert();
 	}
 	
 	@Then("Checks, if he is signed in")
 	public void check_if_he_is_signed_in() {
-		Assert.assertEquals("Witamy rejestracja powiodła się.", GetText(SIGNIN_PAGE_WELCOME_INSCRIPTION)); 
+		Assert.assertEquals("Witamy rejestracja powiodła się.", getText(signinPageWelcomeInscription)); 
 	}
 	
 	@When("Sign in with empty name input")
@@ -42,8 +42,5 @@ public class SigninPageSteps {
 	public void sign_in_with_empty_password_input() {
 		SignIn("Marcin", "marcin1988@gmail.com", "");
 	}
-	
-
-
 	
 }

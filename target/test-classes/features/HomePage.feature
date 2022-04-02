@@ -1,4 +1,4 @@
-@allAppFeatures @homePageFeatures 
+@allAppFeatures @homePageFeatures
 Feature: Home Page features
 
   @checkAllLinks
@@ -28,40 +28,40 @@ Feature: Home Page features
 
   @searchForProductNoOneHave
   Scenario Outline: Search for product that no one Have
-  	Given User navigates to the application
+    Given User navigates to the application
     When User types "<productNoOneHave>" name
     And Choose product
     Then No product description appears on the page
 
     Examples: 
       | productNoOneHave |
-      | cebula  				 |
-      
+      | cebula           |
+
   @checkCarouselButtons
-  Scenario Outline: Check carousel Buttons
-  	Given User navigates to the application
+  Scenario Outline: Check carousel buttons
+    Given User navigates to the application
     When User clicks on left carusel arrow button
     Then Carousel goes left
-    When User clicks on right corusel arrow Button
-    Then carusel goes right
-    
+    And User clicks on right corusel arrow button
+    Then Carusel goes right
+
   @HomePageProductAndSellerDetailsCheck
   Scenario Outline: Check seller, product details, Log out and cart icon number on home page
     Given User navigates to the application
     When User clicks on the "<link>"
-   	And  Log in with correct credential
+    And Log in with correct credential
     Then Navigate to the home page
-   	When User types "<product>" name
-   	And Choose product
-    Then Clicks on the product details button 
+    When User types "<product>" name
+    And Choose product
+    Then Clicks on the product details button
     When User is send to product seller details tab
     And Checks, if backward button works
-    Then Clicks on the product details button 
+    Then Clicks on the product details button
     And Add products to cart, one of each kind
     Then Checks, if cart logo number is updated correctly
     And Clicks on log out button
-    Then Check if there is sign in and sign up dropdown tab
-    
-        Examples: 
-      | link   | product |
-      | login  | jabłko  |
+    Then Checks if there is sign in and sign up dropdown tab
+
+    Examples: 
+      | link  | product |
+      | login | jabłko  |

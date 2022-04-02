@@ -1,9 +1,7 @@
 package com.bdd.pages;
 
-import static com.bdd.pages.HomePage.HOME_PAGE_PRODUCT_LIST_ITEM;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 
 public class LoginPage {
@@ -15,9 +13,9 @@ public class LoginPage {
 	
 	
 	public static void logIn(String email, String password) {
-		SendKeys(LOGIN_PAGE_EMAIL_INP, email);
-		SendKeys(LOGIN_PAGE_PASSWORD_INP, password);
-		Click(LOGIN_PAGE_CONFIRM_BUTTON);
+		sendKeys(LOGIN_PAGE_EMAIL_INP, email);
+		sendKeys(LOGIN_PAGE_PASSWORD_INP, password);
+		click(LOGIN_PAGE_CONFIRM_BUTTON);
 	}
 	
 }
