@@ -14,10 +14,7 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 public class HomePageSteps {
 	
-	@Then("Product description appears on the page")
-	public void product_description_appears_on_the_page() {
-		Assert.assertEquals("nazwa: jabłko", getText(homePageProductListItem));   
-	}
+
 	
 	@Then ("No product description appears on the page")
 	public void no_product_description_appears_on_the_page() {

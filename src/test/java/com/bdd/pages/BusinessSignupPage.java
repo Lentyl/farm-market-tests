@@ -6,8 +6,6 @@ import org.openqa.selenium.By;
 
 public class BusinessSignupPage {
 	
-	
-	
 	public static By businessSignUpPageNameInput = By.id("validationCustom01");
 	public static By businessSignUpPagePasswordInput = By.id("validationCustom02");
 	public static By businessSignUpPageEmailInput = By.id("validationCustomUsername");
@@ -41,7 +39,7 @@ public class BusinessSignupPage {
 		if(clickCheckbox)click(businessSignUpPageAgreementCheckbox);
 	}
 	
-	public static void addProduct(String productName, String price, String weight) throws InterruptedException {
+	public static void addProduct(String productName, String price, String weight) {
 		clear(businessSignUpPageProductNameInput);
 		sendKeys(businessSignUpPageProductNameInput, productName);
 		click(businessSignUpPageProductNameInput);

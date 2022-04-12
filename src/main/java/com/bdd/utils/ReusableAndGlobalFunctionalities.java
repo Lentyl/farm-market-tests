@@ -7,15 +7,24 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class ReusableAndGlobalFunctionalities {
+	
+	public static By getElementByXpathText(By xpath, String text) {
+		String name = xpath.toString();
+		name = name.replace("#####", text);
+		name = name.replace("By.xpath: ", ""); 
+		return By.xpath(name);
+	}
+	
 
 	public static Boolean isDisplayed(By el) {
 		try {
-			gdriver.findElement(el);
+			gwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(el));
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return false;
@@ -46,6 +55,45 @@ public class ReusableAndGlobalFunctionalities {
 	public static void click(By el) {
 		gwait.until(ExpectedConditions.visibilityOfElementLocated(el)).click();
 	}
+	
+	public static String getAttribute(By el, String atr) {
+		return gwait.until(ExpectedConditions.visibilityOfElementLocated(el)).getAttribute(atr);
+	}
+	
+	
+	public static void actMoveToElement(By el, int x, int y) {
+		gactoins.moveToElement(gdriver.findElement(el), x, y).build().perform();
+	}
+	
+	public static void actClick(By el) {
+		gactoins.click(gdriver.findElement(el)).build().perform();
+	}
+	
+	public static void actSendKeys() {
+		gactoins.sendKeys(Keys.BACK_SPACE).build().perform();
+	}
+	
+	public static void actClearInput(By el) {
+		gactoins.click(gdriver.findElement(el))
+		.keyDown(Keys.CONTROL)
+		.sendKeys("a")
+		.keyUp(Keys.CONTROL)
+		.sendKeys(Keys.BACK_SPACE)
+		.sendKeys(Keys.ENTER)
+		.build()
+		.perform();
+	}
+	
+	public static void clickChosenListElement(By el, int number) {
+		int i = 0;
+		List<WebElement> elementList = gwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(el));
+		for (WebElement button : elementList) {
+			if(i== number) {
+				button.click();
+			}
+			i++;
+		}
+	}
 
 	public static void clickAllElements(By el) {
 		List<WebElement> elementList = gwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(el));
@@ -61,12 +109,13 @@ public class ReusableAndGlobalFunctionalities {
 		}
 	}
 	
-	public static void sendKeysToAllElements(By el, String ...fieldsContent) {
+	public static void sendKeysToAllElements(By el, String ...fieldsContent) throws InterruptedException {
 		int i = 0;
 		List<WebElement> elementList = gwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(el));
 		for (WebElement element : elementList) {
+			sleep(10000);
 			element.clear();
-			element.sendKeys(fieldsContent[i]);
+			element.sendKeys(fieldsContent[i++]);
 		}
 	}
 

@@ -4,7 +4,10 @@ import static com.bdd.impl.AppAccess.*;
 import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import static com.bdd.variables.GlobalVariables.*;
+import static com.bdd.pages.BusinessSignupPage.addProduct;
 import static com.bdd.pages.CartPage.*;
+import static com.bdd.pages.HomePage.homePageProductListItem;
+
 
 import org.testng.Assert;
 
@@ -22,6 +25,11 @@ public class CoomonSteps {
 		openUrl();
 	}
 	
+	@Then("Product description appears on the page")
+	public void product_description_appears_on_the_page() {
+		Assert.assertEquals("nazwa: jabłko", getText(homePageProductListItem));   
+	}
+	
 	@When ("User clicks on the {string}")
 	public void user_clicks_on_the_Link(String linkName) {
 		checkAllLinks(linkName);
@@ -32,17 +40,17 @@ public class CoomonSteps {
 		checkAllPages(pageName);
 	}
 	
-	@When("User types {string} name")
+	@And("User types {string} name")
 	public void user_types_product_name(String product) {
 		sendKeys(headerAutocompleteInput, product);
 	}
 	
 	@And("Choose product")
-	public void click_on_search_button() {
+	public void choose_product() {
 		headerAutocomplitChoyce();
 	}
 	
-	@Then("Navigate to the home page")
+	@And("Navigate to the home page")
 	public void navigate_to_the_home_page() {
 		click(headerLogoLink);
 	}
@@ -62,7 +70,7 @@ public class CoomonSteps {
 		click(productDetailsBackwordButton);
 	}
 	
-	@When("User is send to product seller details tab")
+	@Then("User is send to product seller details tab")
 	public void user_is_send_to_product_seller_details_tab() {
 		Assert.assertEquals("wstecz", getText(productDetailsBackwordButton));
 	}
@@ -70,6 +78,11 @@ public class CoomonSteps {
 	@Then("Checks, if cart logo number is updated correctly")
 	public void checks_if_cart_logo_number_is_updated_correctly() {
 		Assert.assertEquals("2", getText(headerCartLogoNumber));
+	}
+	
+	@And("Navigate to cart Page")
+	public void navigate_to_cart_page() {
+		click(headerCartLink);
 	}
 	
 	@And("Clicks on log out button")
@@ -88,8 +101,33 @@ public class CoomonSteps {
 	}
 	
 	@When("Logged in user put products to cart and navigate to cart page")
-	public void logged_in_user_put_products_to_cart_and_navigate_to_cart_page() throws InterruptedException {
+	public void logged_in_user_put_products_to_cart_and_navigate_to_cart_page() {
 		navigateWithFullCartToCartPage();
+	}
+	
+	@And("User clicks red cancel button to delete {string} product")
+	public void user_clicks_red_cancel_button_to_delete_product(String name) {
+		click(getElementByXpathText(productCancelButton, name));
+	}
+	
+	@Then("{string} is added to seller offer, appears on the page")
+	public void product_is_added_to_seller_offer_appears_on_the_page(String productName) {
+		Assert.assertEquals(productName, getText(getElementByXpathText(addedProduct, productName))); 
+	}
+	
+	@And("Add product {string}")
+	public void add_products(String productName) {
+		addProduct(productName, "10", "10");
+	}
+	
+	@Then("{string} disappears from the list")
+	public void product_disappears_from_the_list(String productName) {
+		Assert.assertFalse(isDisplayed(getElementByXpathText(addedProduct, productName))); 
+	}
+	
+	@Then("User goes to user panel")
+	public void user_goes_to_user_panel() {
+		click(headerUserPanelLink);
 	}
 	 
 }

@@ -14,12 +14,12 @@ public class SigninPageSteps {
 	
 	@And("Sign in with correct credential")
 	public void sign_in_with_correct_credential() {
-		SignIn("Marcin", "marcin1988@gmail.com", "marcin1988");
+		signIn("Marcin", "marcin1988@gmail.com", "marcin1988");
 	}
 	
 	@And("Sign in with the same correct credential")
 	public void sign_in_with_the_same_correct_credential() {
-		SignIn("Marcin", "marcin1988@gmail.com", "marcin1988");
+		signIn("Marcin", "marcin1988@gmail.com", "marcin1988");
 		acceptAlert();
 	}
 	
@@ -30,17 +30,17 @@ public class SigninPageSteps {
 	
 	@When("Sign in with empty name input")
 	public void sign_in_with_empty_name_input() {
-		SignIn("", "marcin1988@gmail.com", "marcin1988");
+		signIn("", "marcin1988@gmail.com", "marcin1988");
 	}
 	
 	@When("Sign in with empty email input")
 	public void sign_in_with_empty_email_input() {
-		SignIn("Marcin", "", "marcin1988");
+		signIn("Marcin", "", "marcin1988");
 	}
 	
 	@When("Sign in with empty password input")
 	public void sign_in_with_empty_password_input() {
-		SignIn("Marcin", "marcin1988@gmail.com", "");
+		signIn("Marcin", "marcin1988@gmail.com", "");
 	}
 	
 }

@@ -1,7 +1,7 @@
-@allAppFeatures @SigninPageFeatures
+
 Feature: Signin Page features
 
-  @SignInWithCorrectCredential
+  @signInWithCorrectCredential
   Scenario Outline: Sign in with corect credential
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -14,7 +14,7 @@ Feature: Signin Page features
       | link   |
       | signUp |
       
-  @SignInWithTheSameCredentials
+  @signInWithTheSameCredentials
   Scenario Outline: Sign in with the same credentials
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -26,7 +26,7 @@ Feature: Signin Page features
       | signUp |
       
   
-  @SignInWithEmptyNameInput
+  @signInWithEmptyNameInput
   Scenario Outline: Sign in with emty name input
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -37,7 +37,7 @@ Feature: Signin Page features
       | link   |
       | signUp |
     
-  @SignInWithEmptyEmailInput
+  @signInWithEmptyEmailInput
   Scenario Outline: Sign in with emty email input
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -49,7 +49,7 @@ Feature: Signin Page features
       | signUp |
       
 
-  @SignInWithEmptyPassword
+  @signInWithEmptyPassword
   Scenario Outline: Sign in with emty password input
     Given User navigates to the application
     When User clicks on the "<link>"

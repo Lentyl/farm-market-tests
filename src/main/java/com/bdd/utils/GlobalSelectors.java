@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 
 public class GlobalSelectors {
+	
 	//HEADER SELECTORS
 	public static By headerAutocompleteInput = By.className("product-autocomplete__input");	
 	public static By headerAutocompleteSearchedProduct = By.className("product-autocomplete__product");
@@ -15,13 +16,16 @@ public class GlobalSelectors {
 	public static By headerSellLink = By.cssSelector("a[href='/business-sign-up']");
 	public static By headerCartLink = By.cssSelector("a[href='/cart']");
 	public static By headerLogoLink = By.cssSelector("a[href='/']:nth-child(1)");
+	public static By headerUserPanelLink = By.cssSelector("a[href='/user']");
 	public static By headerLogoInscriptionLink = By.cssSelector("a[href='/']:nth-child(2)");
 	public static By headerCartLogoNumber = By.className("header__cart-item-counter"); 
 	public static By headerLogoutButto = By.className("header__signout-btn");
 	
-	//reusable global selectors
+	//REUSABLE GLOBAL SELECTORS 
 	public static By productDetailsBytton = By.className("search__details-btn");
 	public static By addToCartButton = By.className("search__add-item-btn");
 	public static By productDetailsBackwordButton = By.className("search__backwards-btn");
+	public static By productCancelButton = By.xpath("//button[ancestor::div[contains(@class,'add-product__cancel-btn-container') and preceding-sibling::div[text()='#####']]]");
+	public static By addedProduct = By.xpath("//div[text()='#####']");
 	
 }

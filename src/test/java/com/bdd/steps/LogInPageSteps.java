@@ -13,18 +13,18 @@ public class LoginPageSteps {
 	
 	@And("Log in with correct credential")
 	public void log_in_with_correct_credentials() {
-		logIn("jarek@wp.pl", "maniek84");
+		logIn("jarek@wp.pl", "jarek84");
 	}
 	
 	@And("Log in with incorrect email")
 	public void log_in_with_correct_email() {
-		logIn("jarek88@wp.pl", "maniek84");
+		logIn("jarek88@wp.pl", "jarek84");
 		acceptAlert();
 	}
 	
 	@And("Log in with incorrect password")
 	public void log_in_with_correct_password() {
-		logIn("jarek@wp.pl", "maniek8");
+		logIn("jarek@wp.pl", "jarek8");
 		acceptAlert();
 	}
 	

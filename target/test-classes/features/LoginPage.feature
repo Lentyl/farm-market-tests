@@ -1,7 +1,7 @@
-@allAppFeatures @LoginPageFeatures
+@allAppFeatures @loginPageFeatures
 Feature: Login Page features
 
-  @LogInWithCorrectCredential
+  @logInWithCorrectCredential
   Scenario Outline: Log in with correct email and password
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -14,7 +14,7 @@ Feature: Login Page features
       | link  |
       | login |
 
-  @LogInWithIncorrectEmail
+  @logInWithIncorrectEmail
   Scenario Outline: Log in with incorect email
     Given User navigates to the application
     When User clicks on the "<link>"
@@ -25,7 +25,7 @@ Feature: Login Page features
       | link  |
       | login |
 
-  @LogInWithIncorrectEmail
+  @logInWithIncorrectEmail
   Scenario Outline: Log in with incorect password
     Given User navigates to the application
     When User clicks on the "<link>"

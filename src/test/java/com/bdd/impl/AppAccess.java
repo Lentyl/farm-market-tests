@@ -14,7 +14,10 @@ public class AppAccess {
 		if(gjs == null || gjs.toString().contains("null")) {
 			gjs = getJs();
 		}
-		
+		if(gactoins == null || gactoins.toString().contains("null")) {
+			gactoins = getActions();
+		}
+			
 	}
 	
 	public static void openUrl() {

@@ -14,7 +14,7 @@ public class SigninPage {
 	public static By signinPageWelcomeInscription = By.className("login__title");
 	
 	
-	public static void SignIn(String name, String email, String password) {
+	public static void signIn(String name, String email, String password) {
 		sendKeys(signinPageNameInput, name);
 		sendKeys(signinPageEmailInput, email);
 		sendKeys(signinPagePasswordInput, password);
