@@ -10,7 +10,6 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import org.testng.Assert;
 
 public class SigninPageSteps {
-
 	
 	@And("Sign in with correct credential")
 	public void sign_in_with_correct_credential() {

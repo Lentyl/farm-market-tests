@@ -49,7 +49,7 @@ public class CartPageSteps {
 	}
 	
 	@When("Press order button")
-	public void press_order_button() throws InterruptedException {
+	public void press_order_button() {
 		click(cartPageOrderButton);
 	}
 	

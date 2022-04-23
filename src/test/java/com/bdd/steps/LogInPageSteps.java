@@ -10,7 +10,6 @@ import io.cucumber.java.en.Then;
 
 public class LoginPageSteps {
 	
-	
 	@And("Log in with correct credential")
 	public void log_in_with_correct_credentials() {
 		logIn("ralf88@wp.pl", "ralf88");
@@ -32,5 +31,4 @@ public class LoginPageSteps {
 	public void Check_if_he_is_logged_in() {
 		Assert.assertEquals("Witamy jesteś zalogowany.", getText(loginPageWelcomeInscription)); 
 	}
-
 }

@@ -133,7 +133,5 @@ public class CoomonSteps {
 	@Then("Checks order confirmation text")
 	public void checks_order_confirmation_text() {
 		Assert.assertEquals("zamówienie wysłane", getText(cartPageConfirmationOrderMessage));
-	}
-	
-	 
+	}	 
 }

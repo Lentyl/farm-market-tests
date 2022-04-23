@@ -5,7 +5,6 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import org.testng.Assert;
 import static com.bdd.pages.UserPanelPage.*;
 
-
 public class UserPanelPageSteps {
 	
 	@Then("Checks user information fields")
@@ -19,7 +18,7 @@ public class UserPanelPageSteps {
 	}
 	
 	@Then("Check if business panel isnt displaying")
-	public void check_if_business_panel_isnt_displaying() throws InterruptedException {
+	public void check_if_business_panel_isnt_displaying() {
 		Assert.assertFalse(isDisplayed(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika")));
 	}
 	
@@ -93,5 +92,4 @@ public class UserPanelPageSteps {
 	public void checks_seller_details() {
 		sellerDetailsCheck();
 	}
-	
 }

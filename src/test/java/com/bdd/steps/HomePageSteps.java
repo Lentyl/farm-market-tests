@@ -11,10 +11,7 @@ import io.cucumber.java.en.When;
 
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
-
 public class HomePageSteps {
-	
-
 	
 	@Then ("No product description appears on the page")
 	public void no_product_description_appears_on_the_page() {
@@ -31,7 +28,6 @@ public class HomePageSteps {
 	public void carousel_goes_left() throws InterruptedException {
 		Assert.assertEquals("brukselka 40% taniej", getCurrentHeaderCoureselText());
 	}
-	
 
 	@And("User clicks on right corusel arrow button")
 	public void user_clicks_on_right_corusel_arrow_button() {
@@ -42,7 +38,4 @@ public class HomePageSteps {
 	public void carusel_goes_right() throws InterruptedException {
 		Assert.assertEquals("20% taniej", getCurrentHeaderCoureselText());
 	}
-	
-	
-	//System.out.println(pageName+ " - !!!!!!!!!!!!!!!!!!!!!!!!!");
 }
