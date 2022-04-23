@@ -77,9 +77,4 @@ public class CartPageSteps {
 	public void fill_in_telephone_input() {
 		sendKeys(cartPageTelephoneInput, "847362849");
 	}
-	@Then("Checks order confirmation text")
-	public void check_order_confirmation_text() {
-		Assert.assertEquals("zamówienie wysłane", getText(cartPageConfirmationOrderMessage));
-	}
-
 }

@@ -15,20 +15,24 @@ import org.testng.Assert;
 public class ReusableAndGlobalFunctionalities {
 	
 	public static By getElementByXpathText(By xpath, String text) {
+		
 		String name = xpath.toString();
 		name = name.replace("#####", text);
 		name = name.replace("By.xpath: ", ""); 
 		return By.xpath(name);
 	}
 	
-
 	public static Boolean isDisplayed(By el) {
-		try {
-			gwait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(el));
-			return true;
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			return false;
+		boolean visability = false;
+		for (int i = 0; i < 20; i++) {
+			try {
+				gdriver.findElement(el);
+				visability = true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+				visability = false;
+			}
 		}
+		return visability;
 	}
 
 	public static void acceptAlert() {

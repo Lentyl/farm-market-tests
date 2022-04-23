@@ -129,5 +129,11 @@ public class CoomonSteps {
 	public void user_goes_to_user_panel() {
 		click(headerUserPanelLink);
 	}
+	
+	@Then("Checks order confirmation text")
+	public void checks_order_confirmation_text() {
+		Assert.assertEquals("zamówienie wysłane", getText(cartPageConfirmationOrderMessage));
+	}
+	
 	 
 }

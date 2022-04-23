@@ -1,7 +1,6 @@
 package com.bdd.pages;
 
 import static com.bdd.pages.LoginPage.logIn;
-import static com.bdd.pages.UserPanelPage.userPanelSellerDetailsButton;
 import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
@@ -30,8 +29,6 @@ public class UserPanelPage {
 	
 	public static By userPanelSellerDetailsButton = By.cssSelector(".order-details__card-btn");
 	public static By userPanelOrderDetailsElement = By.xpath("//div[contains(@class,'list-group-flush') and normalize-space()='#####']");
-	
-	
 	
 	
 	public static void goToUserPanel(String userStatus) {
@@ -68,7 +65,7 @@ public class UserPanelPage {
 		Assert.assertEquals("ralf88@wp.pl", email); 
 	}
 	
-	public static void orderDetailsCheck() {
+	public static void orderDetailsCheck() throws InterruptedException {
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "łączna kwota: 80 zł"))); 
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "status zamówienia: realizowane"))); 
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "jabłko"))); 

@@ -79,7 +79,7 @@ Feature: Cart Page features
     And Select the payment method
     And Fill in telephone input
     And Press order button
- 		Then Check order confirmation text
+ 		Then Checks order confirmation text
     And Clicks on log out button
     Then Checks if there is sign in and sign up dropdown tab
     

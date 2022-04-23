@@ -1,4 +1,4 @@
-
+@allAppFeatures @signinPagefeatures
 Feature: Signin Page features
 
   @signInWithCorrectCredential

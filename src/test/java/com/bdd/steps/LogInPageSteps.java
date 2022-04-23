@@ -13,24 +13,24 @@ public class LoginPageSteps {
 	
 	@And("Log in with correct credential")
 	public void log_in_with_correct_credentials() {
-		logIn("jarek@wp.pl", "jarek84");
+		logIn("ralf88@wp.pl", "ralf88");
 	}
 	
 	@And("Log in with incorrect email")
 	public void log_in_with_correct_email() {
-		logIn("jarek88@wp.pl", "jarek84");
+		logIn("ralf8@wp.pl", "ralf88");
 		acceptAlert();
 	}
 	
 	@And("Log in with incorrect password")
 	public void log_in_with_correct_password() {
-		logIn("jarek@wp.pl", "jarek8");
+		logIn("ralf88@wp.pl", "ralf8");
 		acceptAlert();
 	}
 	
 	@Then("Checks, if he is logged in")
 	public void Check_if_he_is_logged_in() {
-		Assert.assertEquals("Witamy jesteś zalogowany.", getText(LOGIN_PAGE_WELCOME_INSCRIPTION)); 
+		Assert.assertEquals("Witamy jesteś zalogowany.", getText(loginPageWelcomeInscription)); 
 	}
 
 }

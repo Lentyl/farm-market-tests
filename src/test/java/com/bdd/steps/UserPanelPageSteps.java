@@ -19,7 +19,7 @@ public class UserPanelPageSteps {
 	}
 	
 	@Then("Check if business panel isnt displaying")
-	public void check_if_business_panel_isnt_displaying() {
+	public void check_if_business_panel_isnt_displaying() throws InterruptedException {
 		Assert.assertFalse(isDisplayed(userPanelPageUserName));
 	}
 	
@@ -80,7 +80,7 @@ public class UserPanelPageSteps {
 	}
 	
 	@Then("User goes to order detail card and checks order details")
-	public void user_goes_to_order_detail_card_and_checks_order_details() {
+	public void user_goes_to_order_detail_card_and_checks_order_details() throws InterruptedException {
 		orderDetailsCheck();
 	}
 	

@@ -53,11 +53,11 @@ public class CartPage {
 	}
 	
 	public static void automaticFillingFieldsWithDataCheck(){
-		Assert.assertEquals( "Jarek", getAttribute(cartPageNameInput,"value"));
+		Assert.assertEquals( "Rafał", getAttribute(cartPageNameInput,"value"));
 		Assert.assertEquals("Kazimierza Wielkiego 17A/10", getAttribute(cartPageStreetInInput,"value"));
-		Assert.assertEquals("80-180", getAttribute(cartPagePostCodeInput,"value"));
-		Assert.assertEquals("Gdańsk", getAttribute(cartPageTownInput,"value"));
-		Assert.assertEquals("jarek@wp.pl", getAttribute(cartPageEmailInput,"value"));
+		Assert.assertEquals("09-100", getAttribute(cartPagePostCodeInput,"value"));
+		Assert.assertEquals("Płońsk", getAttribute(cartPageTownInput,"value"));
+		Assert.assertEquals("ralf88@wp.pl", getAttribute(cartPageEmailInput,"value"));
 	}
 	
 	public static void fillInRecipientsDetails(String name) throws InterruptedException {
