@@ -64,7 +64,6 @@ public class ReusableAndGlobalFunctionalities {
 		return gwait.until(ExpectedConditions.visibilityOfElementLocated(el)).getAttribute(atr);
 	}
 	
-	
 	public static void actMoveToElement(By el, int x, int y) {
 		gactoins.moveToElement(gdriver.findElement(el), x, y).build().perform();
 	}

@@ -11,7 +11,6 @@ public class HomePage {
 	public static By homePageEmtyProductList = By.className("search__title");	
 	public static By homePageCarouselRightButton = By.className("carousel-control-next");
 	public static By homePageCarouselLeftButton = By.className("carousel-control-prev");
-
 	
 	public static String getCurrentHeaderCoureselText() throws InterruptedException {
 		sleep(2500);

@@ -11,7 +11,6 @@ public class LoginPage {
 	public static By loginPageConfirmButton = By.className("login__btn");
 	public static By loginPageWelcomeInscription = By.className("login__title");
 	
-	
 	public static void logIn(String email, String password) {
 		sendKeys(loginPageEmailInput, email);
 		sendKeys(loginPagePasswordInput, password);

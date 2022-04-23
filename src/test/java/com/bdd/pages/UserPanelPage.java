@@ -10,24 +10,24 @@ import org.testng.Assert;
 
 public class UserPanelPage {
 	
-	public static By userPanelPageUserName = By.xpath("//div[child::h6[text()='nazwa użytkownika']]");
-	public static By userPanelPagePostCode = By.xpath("//div[child::h6[text()='kod pocztowy']]");
-	public static By userPanelPageTown = By.xpath("//div[child::h6[text()='miejscowość']]");
-	public static By userPanelPageStreet = By.xpath("//div[child::h6[text()='ulica/nr domu']]");
-	public static By userPanelPageEmail = By.xpath("//div[child::h6[text()='e-mail']]");
-	
-	public static By userPanelPagePencilIconButton = By.cssSelector("svg.userPanel__pencil-icon");
+	//USER DETAILS
+	public static By userPanelUserDetailsField = By.xpath("//div[child::h6[text()='#####']]");
 	public static By userPanelPageConfirmButton = By.xpath("//button[text()='zatwierdź']");
 	public static By userPanelPageTownInput = By.xpath("//input[preceding-sibling::h6[text()='miejscowość']]");
 	public static By userPanelPageEmailInput = By.xpath("//input[preceding-sibling::h6[text()='e-mail']]");
 	public static By userPanelPagePasswordInput = By.xpath("//input[preceding-sibling::h6[text()='hasło']]");
+	
+	//WARNIN MESSAGE ELEMENTS
 	public static By userPanelPageWarningMessageHeading = By.cssSelector(".alert-heading");
 	public static By userPanelPageWarningMessageXButton = By.cssSelector("[aria-hidden='true']");
 	
+	//USER PANEL NAVIGATION AND HEADERS
+	public static By userPanelPagePencilIconButton = By.cssSelector("svg.userPanel__pencil-icon");
 	public static By userPanelPageOrderHeader = By.cssSelector(".userPanel__header");
 	public static By userPanelOrderDetailsLink = By.xpath("//a[text()='Szczegóły zamówienia']");
-	
 	public static By userPanelSellerDetailsButton = By.cssSelector(".order-details__card-btn");
+	
+	//ORDER DETAILS ELEMENTS
 	public static By userPanelOrderDetailsElement = By.xpath("//div[contains(@class,'list-group-flush') and normalize-space()='#####']");
 	
 	
@@ -49,14 +49,12 @@ public class UserPanelPage {
 		click(userPanelPageConfirmButton);
 	}
 	
-	
 	public static void checkUserInformationFields() {
-		
-		String name = Jsoup.parse(getAttribute(userPanelPageUserName,"outerHTML")).selectFirst("div").ownText();
-		String postCode = Jsoup.parse(getAttribute(userPanelPagePostCode,"outerHTML")).selectFirst("div").ownText();
-		String town = Jsoup.parse(getAttribute(userPanelPageTown,"outerHTML")).selectFirst("div").ownText();
-		String street = Jsoup.parse(getAttribute(userPanelPageStreet,"outerHTML")).selectFirst("div").ownText();
-		String email = Jsoup.parse(getAttribute(userPanelPageEmail,"outerHTML")).selectFirst("div").ownText();
+		String name = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika"),"outerHTML")).selectFirst("div").ownText();
+		String postCode = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "kod pocztowy"),"outerHTML")).selectFirst("div").ownText();
+		String town = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "miejscowość"),"outerHTML")).selectFirst("div").ownText();
+		String street = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "ulica/nr domu"),"outerHTML")).selectFirst("div").ownText();
+		String email = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "e-mail"),"outerHTML")).selectFirst("div").ownText();
 		
 		Assert.assertEquals("Rafał", name); 
 		Assert.assertEquals("09-100", postCode); 

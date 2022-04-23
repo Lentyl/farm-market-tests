@@ -20,7 +20,7 @@ public class UserPanelPageSteps {
 	
 	@Then("Check if business panel isnt displaying")
 	public void check_if_business_panel_isnt_displaying() throws InterruptedException {
-		Assert.assertFalse(isDisplayed(userPanelPageUserName));
+		Assert.assertFalse(isDisplayed(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika")));
 	}
 	
 	@And("Clicks on the pencil icon button")
