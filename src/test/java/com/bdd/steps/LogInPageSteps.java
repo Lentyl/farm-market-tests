@@ -10,7 +10,7 @@ import io.cucumber.java.en.Then;
 
 public class LoginPageSteps {
 	
-	@And("Log in with correct credential")
+	@And("I log in with correct credential")
 	public void log_in_with_correct_credentials() {
 		logIn("ralf88@wp.pl", "ralf88");
 	}

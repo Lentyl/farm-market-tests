@@ -3,9 +3,9 @@ Feature: Home Page features
 
   @checkAllLinks
   Scenario Outline: Check all links
-    Given User navigates to the application
-    When User clicks on the "<link>"
-    Then User is send to "<name>" page
+    Given I navigate to the application
+    When I click on the "<link>" link
+    Then I am send to "<name>" page
 
     Examples: 
       | link   | name           |
@@ -16,10 +16,10 @@ Feature: Home Page features
       | cart   | cart           |
 
   @searchProduct
-  Scenario Outline: Find product, apple
-    Given User navigates to the application
-    When User types "<product>" name
-    And Choose product
+  Scenario Outline: Find apple product
+    Given I navigate to the application
+    When I type "<product>" name
+    And I choose product
     Then Product description appears on the page
 
     Examples: 
@@ -27,10 +27,10 @@ Feature: Home Page features
       | jabłko  |
 
   @searchForProductNoOneHave
-  Scenario Outline: Search for product that no one Have
-    Given User navigates to the application
-    When User types "<productNoOneHave>" name
-    And Choose product
+  Scenario Outline: Search for product that no one have
+    Given I navigate to the application
+    When I type "<productNoOneHave>" name
+    And I choose product
     Then No product description appears on the page
 
     Examples: 
@@ -39,28 +39,28 @@ Feature: Home Page features
 
   @checkCarouselButtons
   Scenario Outline: Check carousel buttons
-    Given User navigates to the application
-    When User clicks on left carusel arrow button
+    Given I navigate to the application
+    When I click on the left carusel arrow button
     Then Carousel goes left
-    And User clicks on right corusel arrow button
+    And I click on the right corusel arrow button
     Then Carusel goes right
 
   @homePageProductAndSellerDetailsCheck
-  Scenario Outline: Check seller, product details, Log out and cart icon number on home page
-    Given User navigates to the application
-    When User clicks on the "<link>"
-    And Log in with correct credential
-    And Navigate to the home page
-    When User types "<product>" name
-    And Choose product
-    And Clicks on the product details button
-    Then User is send to product seller details tab
-    And Checks, if backward button works
-    And Clicks on the product details button
-    And Add products to cart, one of each kind
-    Then Checks, if cart logo number is updated correctly
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+  Scenario Outline: Check seller, product details and cart icon number then Log out
+    Given I navigate to the application
+    When I click on the "<link>" link
+    * I log in with correct credential
+    * I navigate to the home page
+    When I type "<product>" name
+    * I choose product
+    * I click on the product details button
+    Then I am send to product seller details tab
+    * I check, if backward button works
+    * I click on the product details button
+    * I add products to cart, one of each kind
+    Then I check, if cart logo number is updated correctly
+    * I click on the log out button
+    Then I check, if there is sign in and sign up dropdown tab
 
     Examples: 
       | link  | product |
