@@ -7,12 +7,12 @@ import static com.bdd.pages.UserPanelPage.*;
 
 public class UserPanelPageSteps {
 	
-	@Then("Checks user information fields")
+	@Then("I check user information fields")
 	public void checks_user_information_fields() {
 		checkUserInformationFields();
 	}
 	
-	@When("Logged in {string} user goes to user panel")
+	@When("I am Logged in and have {string} I go to user panel")
 	public void logged_in_user_goes_to_user_panel(String userStatus) {
 		goToUserPanel(userStatus);
 	}
@@ -22,23 +22,23 @@ public class UserPanelPageSteps {
 		Assert.assertFalse(isDisplayed(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika")));
 	}
 	
-	@And("Clicks on the pencil icon button")
+	@And("I click on the pencil icon button")
 	public void clicks_on_the_pencil_icon_button() {
 		click(userPanelPagePencilIconButton);
 	}
 	
-	@Then("Checks if edit panel is open")
+	@Then("I check if edit panel is open")
 	public void checks_if_edit_panel_is_open() {
 		Assert.assertTrue(isDisplayed(userPanelPageConfirmButton)); 
 	}
 	
-	@And("Changes town name on {string}")
+	@And("I change town name on {string}")
 	public void changes_town_name_on(String townName) {
 		clear(userPanelPageTownInput);
 		sendKeys(userPanelPageTownInput, townName); 
 	}
 	
-	@And("Clicks on confirm button")
+	@And("I click on confirm button")
 	public void clicks_on_confirm_button() {
 		click(userPanelPageConfirmButton);
 	}
@@ -48,17 +48,17 @@ public class UserPanelPageSteps {
 		Assert.assertEquals("Zmień wszystkie elementy adresu!", getText(userPanelPageWarningMessageHeading));
 	}
 	
-	@Then("Checks email warning message content")
+	@Then("I check email warning message content")
 	public void checks_email_warning_message_content() {
 		Assert.assertEquals("chcesz zmienić e-mail?", getText(userPanelPageWarningMessageHeading));
 	}
 	
-	@And("Clicks x button in the warning message")
-	public void clicks_x_button_in_the_warning_message() {
+	@And("I click x button in the warning message")
+	public void click_x_button_in_the_warning_message() {
 		click(userPanelPageWarningMessageXButton);
 	}
 	
-	@And("Changes email")
+	@And("I changes email")
 	public void changes_email() {
 		emailValueChange("ralf8@wp.pl"); 
 	}

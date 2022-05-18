@@ -1,0 +1,4 @@
+com\bdd\utils\ReusableAndGlobalFunctionalities.class
+com\bdd\utils\GlobalSelectors.class
+com\bdd\variables\GlobalVariables.class
+com\bdd\utils\WebDriverUtils.class

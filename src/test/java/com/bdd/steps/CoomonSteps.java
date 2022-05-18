@@ -19,10 +19,15 @@ import io.cucumber.java.en.When;
 public class CoomonSteps {
 	
 	@Given("I navigate to the application")
-	public void user_navigates_to_the_application() {
+	public void navigate_to_the_application() {
 		accessApp();
 		gdriver.manage().window().maximize();
 		openUrl();
+	}
+	
+	@And("I navigate to the home page by url")
+	public void navigate_to_the_home_page_by_url() {
+		goToUrl("https://farm-market-app-74e39.web.app/");
 	}
 	
 	@Then("Product description appears on the page")
@@ -35,7 +40,7 @@ public class CoomonSteps {
 		checkAllLinks(linkName);
 	}
 	
-	@Then ("I am send to {string} page")
+	@Then ("I am sent to the {string} page")
 	public void user_is_send_to_next_page(String pageName){
 		checkAllPages(pageName);
 	}
@@ -60,17 +65,17 @@ public class CoomonSteps {
 		click(productDetailsBytton);
 	}
 	
-	@And("I add products to cart, one of each kind")
+	@And("I add products to the cart, one of each kind")
 	public void add_products_to_cart_one_of_each_kind() {
 		clickAllElements(addToCartButton);
 	}
 	
-	@And("I check, if backward button works")
+	@And("I check if backward button works")
 	public void checks_if_backward_button_works() {
 		click(productDetailsBackwordButton);
 	}
 	
-	@Then("I am send to product seller details tab")
+	@Then("I am sent to the product seller details tab")
 	public void user_is_send_to_product_seller_details_tab() {
 		Assert.assertEquals("wstecz", getText(productDetailsBackwordButton));
 	}
@@ -85,7 +90,7 @@ public class CoomonSteps {
 		click(headerCartLink);
 	}
 	
-	@And("I click on the log out button")
+	@And("I click on log out button")
 	public void clicks_on_log_out_button() {
 	  click(headerLogoutButto);
 	}
@@ -95,17 +100,17 @@ public class CoomonSteps {
 		acceptAlert();
 	}
 	
-	@Then("I check, if there is sign in and sign up dropdown tab")
+	@Then("I check if I am logged out and there is log in dropdown menu")
 	public void checks_if_logo_button_changed_on_sign_in_and_sign_up_dropdown_tab() {
 		Assert.assertEquals("Logowanie/rejestracja", getText(headerLoginSignupDropdown));
 	}
 	
-	@When("Logged in user put products to cart and navigate to cart page")
-	public void logged_in_user_put_products_to_cart_and_navigate_to_cart_page() {
+	@When("I Log in, put products to cart and navigate to cart page")
+	public void log_in_put_products_to_cart_and_navigate_to_cart_page() {
 		navigateWithFullCartToCartPage();
 	}
 	
-	@And("User clicks red cancel button to delete {string} product")
+	@And("I click the red cancel button to delete {string} product")
 	public void user_clicks_red_cancel_button_to_delete_product(String name) {
 		click(getElementByXpathText(productCancelButton, name));
 	}
@@ -115,7 +120,7 @@ public class CoomonSteps {
 		Assert.assertEquals(productName, getText(getElementByXpathText(addedProduct, productName))); 
 	}
 	
-	@And("Add product {string}")
+	@And("I add product {string}")
 	public void add_products(String productName) {
 		addProduct(productName, "10", "10");
 	}

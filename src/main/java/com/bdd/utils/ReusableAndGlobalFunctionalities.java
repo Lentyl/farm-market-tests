@@ -196,5 +196,11 @@ public class ReusableAndGlobalFunctionalities {
 		click(headerCartLink);
 		click(headerLogoInscriptionLink);
 	}
+	
+	public static void goToUrl(String url) {
+		gdriver.navigate().to(url);
+	}
+	
+	
 
 }

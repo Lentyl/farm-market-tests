@@ -13,7 +13,7 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 public class HomePageSteps {
 	
-	@Then ("No product description appears on the page")
+	@Then ("There is no product description on the page")
 	public void no_product_description_appears_on_the_page() {
 		Assert.assertEquals("Wyszukaj okazje! Używaj liczby pojedynczej (cebula, truskawka, marchewka).", getText(homePageEmtyProductList));
 	}

@@ -3,11 +3,11 @@ Feature: User panel page feature
 
   @userInformationCheck
   Scenario Outline: Warning message check
-    Given User navigates to the application
-    When Logged in "<status>" user goes to user panel
-    Then Checks user information fields
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    Given I navigate to the application
+    When I am Logged in and have "<status>" I go to user panel
+    Then I check user information fields
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
       | status   |
@@ -15,21 +15,21 @@ Feature: User panel page feature
 
   @warningMessageCheck
   Scenario Outline: Warning message check
-    Given User navigates to the application
-    When Logged in "<status>" user goes to user panel
-    And Clicks on the pencil icon button
-    Then Checks if edit panel is open
-    And Changes town name on "<warszawa>"
-    And Clicks on confirm button
+    Given I navigate to the application
+    When I am Logged in and have "<status>" I go to user panel
+    * I click on the pencil icon button
+    Then I check if edit panel is open
+    * I change town name on "<warszawa>"
+    * I click on confirm button
     Then Checks town warning  message content
-    And Clicks x button in the warning message
-    And Changes town name on "<plonsk>"
-    And Changes email
-    And Clicks on confirm button
-    Then Checks email warning message content
-    And Clicks x button in the warning message
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    * I click x button in the warning message
+    * I change town name on "<plonsk>"
+    * I changes email
+    * I click on confirm button
+    Then I check email warning message content
+    * I click x button in the warning message
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
       | status   | warszawa | plonsk |
@@ -37,15 +37,15 @@ Feature: User panel page feature
 
   @addAndDeleteItemCheck
   Scenario Outline: Warning message check
-    Given User navigates to the application
-    When Logged in "<status>" user goes to user panel
-    And Clicks on the pencil icon button
-    And Add product "<productName>"
+    Given I navigate to the application
+    When I am Logged in and have "<status>" I go to user panel
+    * I click on the pencil icon button
+    * I add product "<productName>"
     Then "<productName>" is added to seller offer, appears on the page
-    And User clicks red cancel button to delete "<productName>" product
+    * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
       | status   | productName |
@@ -53,15 +53,15 @@ Feature: User panel page feature
 
   @addOrderAndCheckIfDetailsAreCorrect
   Scenario Outline: Warning message check
-    Given User navigates to the application
-    When Logged in "<status>" user goes to user panel
+    Given I navigate to the application
+    When I am Logged in and have "<status>" I go to user panel
     Then Checks if orders arent present
-    And Navigate to the home page
-    And User types "<product>" name
-    And Choose product
-    And Clicks on the product details button
-    Then User is send to product seller details tab
-    And Add products to cart, one of each kind
+    And I navigate to the home page
+    When I type "<product>" name
+    * I choose product
+    * I click on the product details button
+    Then I am sent to the product seller details tab
+     * I add products to the cart, one of each kind
     And Navigate to cart Page
     And Select the delivery method
     And Select the payment method
@@ -74,8 +74,8 @@ Feature: User panel page feature
     Then User goes to order detail card and checks order details
     And Clicks seller details button
     Then Checks seller details
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
       | status   | product |
@@ -83,11 +83,11 @@ Feature: User panel page feature
 
   @businessPanelDisplayedCheck
   Scenario Outline: log in private user and check if panel is displayed
-    Given User navigates to the application
-    When Logged in "<status>" user goes to user panel
+    Given I navigate to the application
+    When I am Logged in and have "<status>" I go to user panel
     Then Check if business panel isnt displaying
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
       | status  |

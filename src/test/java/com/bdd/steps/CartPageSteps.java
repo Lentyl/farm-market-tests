@@ -7,23 +7,23 @@ import io.cucumber.java.en.*;
 
 public class CartPageSteps {
 	
-	@When("Add to cart one more item and delete")
-	public void add_one_more_first_item_to_cart() {
+	@And("I add to cart one more item and delete")
+	public void add_to_cart_one_more_item_and_delete() {
 		click(cartPageFirstItemAddButton);
 		click(cartPageBinButtons);
 	}
 	
-	@Then("User checks if item is added")
-	public void user_checks_if_item_is_added() {
+	@Then("I check if item is added")
+	public void checks_if_item_is_added() {
 		Assert.assertEquals("x 1", getText(cartPageFirstItemQuantity));
 	}
 	
-	@And("Deletes all items")
+	@And("I delete all items")
 	public void deletes_all_items() {
 		clickAllElements(cartPageBinButtons);
 	}
 	
-	@Then("User checks that no item left")
+	@Then("I check that no item left")
 	public void user_checks_that_no_item_left() {
 		Assert.assertEquals("Twój koszyk jest pusty!", getText(cartPageEmptyCartHeader));
 	}
@@ -33,7 +33,7 @@ public class CartPageSteps {
 		Assert.assertEquals("Łączna kwota: "+amount+" zł", getText(cartPagePriceCounter));
 	}
 	
-	@And("Add first item")
+	@And("I add first item")
 	public void add_one_more_first_item() {
 		click(cartPageFirstItemAddButton);
 	}

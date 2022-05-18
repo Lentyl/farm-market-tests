@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 public class SigninPageSteps {
 	
-	@And("Sign in with correct credential")
+	@And("I sign in with correct credentials")
 	public void sign_in_with_correct_credential() {
 		signIn("Marcin", "marcin1988@gmail.com", "marcin1988");
 	}
@@ -22,8 +22,8 @@ public class SigninPageSteps {
 		acceptAlert();
 	}
 	
-	@Then("Checks, if he is signed in")
-	public void check_if_he_is_signed_in() {
+	@Then("I check, if I am signed in")
+	public void check_if_signed_in() {
 		Assert.assertEquals("Witamy rejestracja powiodła się.", getText(signinPageWelcomeInscription)); 
 	}
 	

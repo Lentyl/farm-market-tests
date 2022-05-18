@@ -3,48 +3,48 @@ Feature: Product Page features
 
   @searchProduct
   Scenario Outline: Find product, apple
-    Given User navigates to the application
-    When User clicks on the "<link>"
-    Then User is send to "<name>" page
-    When User types "<product>" name
-    And Choose product
+    Given I navigate to the application
+    When I click on the "<linkName>" link
+    Then I am sent to the "<pageName>" page
+    When I type "<product>" name
+    * I choose product
     Then Product description appears on the page
 
     Examples: 
-      | product | link | name     |
-      | jabłko  | buy  | products |
+      | product | linkName | pageName |
+      | jabłko  | buy      | products |
 
-  @searchForProductNoOneHave
+  @searchForProductNoOneHas
   Scenario Outline: Search for product that no one Have
-    Given User navigates to the application
-    When User clicks on the "<link>"
-    Then User is send to "<name>" page
-    When User types "<productNoOneHave>" name
-    And Choose product
-    Then No product description appears on the page
+    Given I navigate to the application
+    When I click on the "<linkName>" link
+    Then I am sent to the "<pageName>" page
+    When I type "<productNoOneHas>" name
+    * I choose product
+    Then There is no product description on the page
 
     Examples: 
-      | productNoOneHave | link | name     |
-      | Bakłażan         | buy  | products |
+      | productNoOneHave | linkName | pageName |
+      | Bakłażan         | buy      | products |
 
   @productPageAndSellerDetailsCheck
   Scenario Outline: Check seller, product details, Log out and cart icon number on home page
-    Given User navigates to the application
-    When User clicks on the "<link>"
-    And Log in with correct credential
-    When User clicks on the "<byLink>"
-    Then User is send to "<name>" page
-    When User types "<product>" name
-    And Choose product
-    Then Clicks on the product details button
-    When User is send to product seller details tab
-    And Checks, if backward button works
-    Then Clicks on the product details button
-    And Add products to cart, one of each kind
-    Then Checks, if cart logo number is updated correctly
-    And Clicks on log out button
-    Then Checks if there is sign in and sign up dropdown tab
+    Given I navigate to the application
+    When I click on the "<linkName>" link
+    * I log in with the correct credentials
+    When I click on the "<byLink>" link
+    Then I am sent to the "<pageName>" page
+    When I type "<product>" name
+    * I choose product
+    * I click on the product details button
+    Then I am sent to the product seller details tab
+    * I check if backward button works
+    * I click on the product details button
+    * I add products to the cart, one of each kind
+    Then I check, if cart logo number is updated correctly
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
-      | link  | product   | byLink | name     |
-      | login | winogrono | buy    | products |
+      | linkName | product   | byLink | pageName |
+      | login    | winogrono | buy    | products |

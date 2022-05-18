@@ -4,16 +4,16 @@ Feature: Home Page features
   @checkAllLinks
   Scenario Outline: Check all links
     Given I navigate to the application
-    When I click on the "<link>" link
-    Then I am send to "<name>" page
+    When I click on the "<linkName>" link
+    Then I am sent to the "<pageName>" page
 
     Examples: 
-      | link   | name           |
-      | login  | login          |
-      | signUp | signUp         |
-      | buy    | products       |
-      | sell   | businessSignUp |
-      | cart   | cart           |
+      | linkName   | pageName       |
+      | login      | login          |
+      | signUp     | signUp         |
+      | buy        | products       |
+      | sell       | businessSignUp |
+      | cart       | cart           |
 
   @searchProduct
   Scenario Outline: Find apple product
@@ -27,41 +27,41 @@ Feature: Home Page features
       | jabłko  |
 
   @searchForProductNoOneHave
-  Scenario Outline: Search for product that no one have
+  Scenario Outline: Search for a product that no one has
     Given I navigate to the application
-    When I type "<productNoOneHave>" name
+    When I type "<productNoOneHas>" name
     And I choose product
-    Then No product description appears on the page
+    Then There is no product description on the page
 
     Examples: 
-      | productNoOneHave |
-      | cebula           |
+      | productNoOneHas |
+      | cebula          |
 
   @checkCarouselButtons
   Scenario Outline: Check carousel buttons
     Given I navigate to the application
-    When I click on the left carusel arrow button
+    When I click on the left carousel arrow button
     Then Carousel goes left
-    And I click on the right corusel arrow button
-    Then Carusel goes right
+    And I click on the right corousel arrow button
+    Then Carousel goes right
 
   @homePageProductAndSellerDetailsCheck
   Scenario Outline: Check seller, product details and cart icon number then Log out
     Given I navigate to the application
-    When I click on the "<link>" link
-    * I log in with correct credential
+    When I click on the "<linkName>" link
+    * I log in with the correct credentials
     * I navigate to the home page
     When I type "<product>" name
     * I choose product
     * I click on the product details button
-    Then I am send to product seller details tab
-    * I check, if backward button works
+    Then I am sent to the product seller details tab
+    * I check if backward button works
     * I click on the product details button
-    * I add products to cart, one of each kind
+    * I add products to the cart, one of each kind
     Then I check, if cart logo number is updated correctly
-    * I click on the log out button
-    Then I check, if there is sign in and sign up dropdown tab
+    * I click on log out button
+    Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
-      | link  | product |
-      | login | jabłko  |
+      | linkName | product |
+      | login    | jabłko  |
