@@ -13,7 +13,6 @@ public class SigninPage {
 	public static By signinPageButton = By.className("sign-up__button");
 	public static By signinPageWelcomeInscription = By.className("login__title");
 	
-	
 	public static void signIn(String name, String email, String password) {
 		sendKeys(signinPageNameInput, name);
 		sendKeys(signinPageEmailInput, email);
@@ -21,5 +20,4 @@ public class SigninPage {
 		click(signinPageAgreementCheckbox);
 		click(signinPageButton);
 	}
-	
 }

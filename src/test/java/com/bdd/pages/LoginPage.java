@@ -3,7 +3,6 @@ package com.bdd.pages;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import org.openqa.selenium.By;
 
-
 public class LoginPage {
 	
 	public static By loginPageEmailInput = By.cssSelector(".form-control[placeholder='e-mail']");
@@ -16,5 +15,4 @@ public class LoginPage {
 		sendKeys(loginPagePasswordInput, password);
 		click(loginPageConfirmButton);
 	}
-	
 }

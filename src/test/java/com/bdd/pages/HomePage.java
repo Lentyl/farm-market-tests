@@ -4,7 +4,6 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.openqa.selenium.By;
 
-
 public class HomePage {
 
 	public static By homePageProductListItem = By.className("search__list-item-paragraph-element");	
@@ -16,7 +15,4 @@ public class HomePage {
 		sleep(2500);
 		return getText(By.cssSelector(".main-page__carusel-item.active"));
 	}
-	
-	
-	
 }

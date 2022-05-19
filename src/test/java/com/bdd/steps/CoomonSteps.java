@@ -130,12 +130,12 @@ public class CoomonSteps {
 		Assert.assertFalse(isDisplayed(getElementByXpathText(addedProduct, productName))); 
 	}
 	
-	@Then("User goes to user panel")
-	public void user_goes_to_user_panel() {
+	@Then("Go to user panel")
+	public void go_to_user_panel() {
 		click(headerUserPanelLink);
 	}
 	
-	@Then("Checks order confirmation text")
+	@Then("I check order confirmation text")
 	public void checks_order_confirmation_text() {
 		Assert.assertEquals("zamówienie wysłane", getText(cartPageConfirmationOrderMessage));
 	}	 

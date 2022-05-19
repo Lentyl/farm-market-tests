@@ -24,8 +24,8 @@ Feature: Product Page features
     Then There is no product description on the page
 
     Examples: 
-      | productNoOneHave | linkName | pageName |
-      | Bakłażan         | buy      | products |
+      | productNoOneHas | linkName | pageName |
+      | Bakłażan        | buy      | products |
 
   @productPageAndSellerDetailsCheck
   Scenario Outline: Check seller, product details, Log out and cart icon number on home page

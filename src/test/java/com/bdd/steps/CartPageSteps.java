@@ -60,17 +60,21 @@ public class CartPageSteps {
 	
 	@Then("Checks if there is {string} warning sign")
 	public void checks_if_there_is_warning_sign(String name) throws InterruptedException {
-		errorMessageCheck(name);
+		Assert.assertTrue(errorMessageCheck(name));
 	}
 	
 	@And("Clicks on x button of this worning sign")
 	public void clicks_on_x_button_of_this_worning_sign() {
-		click(cartPageDeliveryMethodXButtonWarningSign);
+		click(cartPageDeliveryMethodWarningSignXButton);
 	}
 	
 	@Then("Checks name, house number, post code, town, email field")
 	public void checks_name_house_number_post_code_town_email_field() {
-		automaticFillingFieldsWithDataCheck();
+		Assert.assertEquals( "Rafał", getAttribute(cartPageNameInput,"value"));
+		Assert.assertEquals("Kazimierza Wielkiego 17A/10", getAttribute(cartPageStreetInInput,"value"));
+		Assert.assertEquals("09-100", getAttribute(cartPagePostCodeInput,"value"));
+		Assert.assertEquals("Płońsk", getAttribute(cartPageTownInput,"value"));
+		Assert.assertEquals("ralf88@wp.pl", getAttribute(cartPageEmailInput,"value"));
 	}
 	
 	@And("Fill in telephone input")

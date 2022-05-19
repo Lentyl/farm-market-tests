@@ -18,23 +18,23 @@ public class HomePageSteps {
 		Assert.assertEquals("Wyszukaj okazje! Używaj liczby pojedynczej (cebula, truskawka, marchewka).", getText(homePageEmtyProductList));
 	}
 	
-	@When("User clicks on left carusel arrow button")
-	public void user_clicks_on_left_carusel_arrow_button(){
+	@When("I click on the left carousel arrow button")
+	public void click_on_left_corousel_arrow_button(){
 		scroll(0,10000);
 		click(homePageCarouselLeftButton);
 	}
 	
-	@Then("Carousel goes left")
+	@Then("Corousel goes left")
 	public void carousel_goes_left() throws InterruptedException {
 		Assert.assertEquals("brukselka 40% taniej", getCurrentHeaderCoureselText());
 	}
 
-	@And("User clicks on right corusel arrow button")
-	public void user_clicks_on_right_corusel_arrow_button() {
+	@And("I click on the right corousel arrow button")
+	public void click_on_right_corousel_arrow_button() {
 		click(homePageCarouselRightButton);
 	}
 	
-	@Then("Carusel goes right")
+	@Then("Corousel goes right")
 	public void carusel_goes_right() throws InterruptedException {
 		Assert.assertEquals("20% taniej", getCurrentHeaderCoureselText());
 	}

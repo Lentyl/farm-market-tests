@@ -6,7 +6,6 @@ import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.jsoup.Jsoup;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class UserPanelPage {
 	
@@ -30,7 +29,6 @@ public class UserPanelPage {
 	//ORDER DETAILS ELEMENTS
 	public static By userPanelOrderDetailsElement = By.xpath("//div[contains(@class,'list-group-flush') and normalize-space()='#####']");
 	
-	
 	public static void goToUserPanel(String userStatus) {
 		if(userStatus.equals("business")) {
 			goToLoginSignUpPage("login");
@@ -49,38 +47,13 @@ public class UserPanelPage {
 		click(userPanelPageConfirmButton);
 	}
 	
-	public static void checkUserInformationFields() {
-		String name = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika"),"outerHTML")).selectFirst("div").ownText();
-		String postCode = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "kod pocztowy"),"outerHTML")).selectFirst("div").ownText();
-		String town = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "miejscowość"),"outerHTML")).selectFirst("div").ownText();
-		String street = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "ulica/nr domu"),"outerHTML")).selectFirst("div").ownText();
-		String email = Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "e-mail"),"outerHTML")).selectFirst("div").ownText();
-		
-		Assert.assertEquals("Rafał", name); 
-		Assert.assertEquals("09-100", postCode); 
-		Assert.assertEquals("Płońsk", town); 
-		Assert.assertEquals("Kazimierza Wielkiego 17A/10", street); 
-		Assert.assertEquals("ralf88@wp.pl", email); 
-	}
-	
-	public static void orderDetailsCheck() throws InterruptedException {
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "łączna kwota: 80 zł"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "status zamówienia: realizowane"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "jabłko"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "30 zł / szt"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "1 szt - 70 kg"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "winogrono"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "50 zł / szt"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "zamówiono 1 szt"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "1 szt - 60 kg"))); 
-	}
-	
-	public static void sellerDetailsCheck() {
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "imię: Jarek"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "e-mail: jarek@wp.pl"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "kod pocztowy: 80-180"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "miejscowość: Gdańsk"))); 
-		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "ulica/nr domu: Kazimierza Wielkiego 17A/10"))); 
+	public static String getUserInformationValue(String fieldName) {
+		if(fieldName.equals("name")) return Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika"),"outerHTML")).selectFirst("div").ownText();
+		else if(fieldName.equals("postCode")) return Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "kod pocztowy"),"outerHTML")).selectFirst("div").ownText();
+		else if(fieldName.equals("town")) return Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "miejscowość"),"outerHTML")).selectFirst("div").ownText();
+		else if(fieldName.equals("street")) return Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "ulica/nr domu"),"outerHTML")).selectFirst("div").ownText();
+		else if(fieldName.equals("email")) return Jsoup.parse(getAttribute(getElementByXpathText(userPanelUserDetailsField, "e-mail"),"outerHTML")).selectFirst("div").ownText();
+		return null;
 	}
 	
 }

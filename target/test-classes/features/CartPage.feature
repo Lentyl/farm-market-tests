@@ -38,8 +38,8 @@ Feature: Cart Page features
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
-      | name          |
-      | paymentMethod |
+      | name    |
+      | delivery|
 
   @buyersDetailsHaveBeenFilledInCheck
   Scenario: Buyers details filled in check
@@ -78,6 +78,6 @@ Feature: Cart Page features
     * Select the payment method
     * Fill in telephone input
     * Press order button
-    Then Checks order confirmation text
+    Then I check order confirmation text
     * I click on log out button
     Then I check if I am logged out and there is log in dropdown menu

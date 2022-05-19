@@ -3,8 +3,6 @@ import static com.bdd.pages.LoginPage.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
-
 import static com.bdd.utils.GlobalSelectors.*;
 
 
@@ -38,7 +36,7 @@ public class CartPage {
 	public static By cartPageEmailMessage = By.xpath("//label[text()='e-mail']/preceding-sibling::div[1]/div[text()='Pole wymagane, sprawdź poprawność e-maila!']");
 	public static By cartPageTelephoneMessage = By.xpath("//label[text()='Telefon']/preceding-sibling::div[1]/div[text()='Numer powinien być dziewięciocyfrowy!']");
 	public static By cartPageDeliveryMethodWarningSign = By.xpath("//p[text()='Nie jest wybrana opcja dostawy lub płatności które są wymagane.']");
-	public static By cartPageDeliveryMethodXButtonWarningSign = By.xpath("//button[following-sibling::p[text()='Nie jest wybrana opcja dostawy lub płatności które są wymagane.']]");
+	public static By cartPageDeliveryMethodWarningSignXButton = By.xpath("//button[following-sibling::p[text()='Nie jest wybrana opcja dostawy lub płatności które są wymagane.']]");
 	
 	
 	public static void navigateWithFullCartToCartPage(){
@@ -50,14 +48,6 @@ public class CartPage {
 		click(productDetailsBytton);
 		clickAllElements(addToCartButton);
 		click(headerCartLink);
-	}
-	
-	public static void automaticFillingFieldsWithDataCheck(){
-		Assert.assertEquals( "Rafał", getAttribute(cartPageNameInput,"value"));
-		Assert.assertEquals("Kazimierza Wielkiego 17A/10", getAttribute(cartPageStreetInInput,"value"));
-		Assert.assertEquals("09-100", getAttribute(cartPagePostCodeInput,"value"));
-		Assert.assertEquals("Płońsk", getAttribute(cartPageTownInput,"value"));
-		Assert.assertEquals("ralf88@wp.pl", getAttribute(cartPageEmailInput,"value"));
 	}
 	
 	public static void fillInRecipientsDetails(String name) throws InterruptedException {
@@ -76,15 +66,14 @@ public class CartPage {
 		}
 	}
 	
-	public static void errorMessageCheck(String name) throws InterruptedException {
-		if(name.equals("userName"))Assert.assertTrue(isDisplayed(cartPageStreetErrorMessage));
-		else if(name.equals("street"))Assert.assertTrue(isDisplayed(cartPageStreetErrorMessage));
-		else if(name.equals("postCode"))Assert.assertTrue(isDisplayed(cartPagePostCodeErrorMessage));
-		else if(name.equals("town"))Assert.assertTrue(isDisplayed(cartPageTownErrorMessage));
-		else if(name.equals("email"))Assert.assertTrue(isDisplayed(cartPageEmailMessage));
-		else if(name.equals("telephone"))Assert.assertTrue(isDisplayed(cartPageTelephoneMessage));
+	public static Boolean errorMessageCheck(String name) throws InterruptedException {
+		if(name.equals("userName")) return isDisplayed(cartPageNameErrorMessage);
+		else if(name.equals("street")) return isDisplayed(cartPageStreetErrorMessage);
+		else if(name.equals("postCode")) return isDisplayed(cartPagePostCodeErrorMessage);
+		else if(name.equals("town")) return isDisplayed(cartPageTownErrorMessage);
+		else if(name.equals("email")) return isDisplayed(cartPageEmailMessage);
+		else if(name.equals("telephone")) return isDisplayed(cartPageTelephoneMessage);
+		else if(name.equals("delivery")) return isDisplayed(cartPageDeliveryMethodWarningSign);
+		return false;
 	}
-	
-	
-	
 }

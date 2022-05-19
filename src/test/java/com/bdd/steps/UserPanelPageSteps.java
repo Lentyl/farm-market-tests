@@ -9,7 +9,11 @@ public class UserPanelPageSteps {
 	
 	@Then("I check user information fields")
 	public void checks_user_information_fields() {
-		checkUserInformationFields();
+		Assert.assertEquals("Rafał", getUserInformationValue("name")); 
+		Assert.assertEquals("09-100", getUserInformationValue("postCode")); 
+		Assert.assertEquals("Płońsk", getUserInformationValue("town")); 
+		Assert.assertEquals("Kazimierza Wielkiego 17A/10", getUserInformationValue("street")); 
+		Assert.assertEquals("ralf88@wp.pl", getUserInformationValue("email")); 
 	}
 	
 	@When("I am Logged in and have {string} I go to user panel")
@@ -68,28 +72,40 @@ public class UserPanelPageSteps {
 		Assert.assertEquals("Rafał nie masz żadnych zamówień.", getText(userPanelPageOrderHeader));
 	}
 	
-	@Then("Checks if header is correct")
+	@Then("I Check if header is correct")
 	public void checks_if_header_is_correct_and_order_is_present() {
 		Assert.assertEquals("Rafał twoje wszystkie zamówienia", getText(userPanelPageOrderHeader));
 	}
 	
-	@Then("Clicks order details link")
-	public void clicks_order_details_link() {
+	@And("Click order details link")
+	public void click_order_details_link() {
 		clickChosenListElement(userPanelOrderDetailsLink, 0);
 	}
 	
-	@Then("User goes to order detail card and checks order details")
+	@Then("I go to order detail card and check order details")
 	public void user_goes_to_order_detail_card_and_checks_order_details() throws InterruptedException {
-		orderDetailsCheck();
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "łączna kwota: 80 zł"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "status zamówienia: realizowane"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "jabłko"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "30 zł / szt"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "1 szt - 70 kg"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "winogrono"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "50 zł / szt"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "zamówiono 1 szt"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "1 szt - 60 kg"))); 
 	}
 	
-	@Then("Clicks seller details button")
-	public void clicks_seller_details_button() {
+	@Then("Click seller details button")
+	public void click_seller_details_button() {
 		click(userPanelSellerDetailsButton);
 	}
 	
-	@Then("Checks seller details")
-	public void checks_seller_details() {
-		sellerDetailsCheck();
+	@Then("I Check seller details")
+	public void check_seller_details() {
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "imię: Jarek"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "e-mail: jarek@wp.pl"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "kod pocztowy: 80-180"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "miejscowość: Gdańsk"))); 
+		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "ulica/nr domu: Kazimierza Wielkiego 17A/10"))); 
 	}
 }

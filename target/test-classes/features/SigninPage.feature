@@ -33,8 +33,8 @@ Feature: Signin Page features
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
-      | link   |
-      | signUp |
+      | linkName |
+      | signUp   |
 
   @signInWithEmptyEmailInput
   Scenario Outline: Sign in with emty email input
@@ -55,5 +55,5 @@ Feature: Signin Page features
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
-      | link   |
-      | signUp |
+      | linkName |
+      | signUp   |

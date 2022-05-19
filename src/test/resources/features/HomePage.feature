@@ -41,9 +41,9 @@ Feature: Home Page features
   Scenario Outline: Check carousel buttons
     Given I navigate to the application
     When I click on the left carousel arrow button
-    Then Carousel goes left
-    And I click on the right corousel arrow button
-    Then Carousel goes right
+    Then Corousel goes left
+    * I click on the right corousel arrow button
+    Then Corousel goes right
 
   @homePageProductAndSellerDetailsCheck
   Scenario Outline: Check seller, product details and cart icon number then Log out
