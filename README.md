@@ -1,5 +1,5 @@
 <b>Mariusz Podgorski</b>
-<p>This project performs autocmatic tests on web application "farm-market" using JAVA, TestNG, Selenium WebDriver, POM and BDD (gherkin language).</p>
+<p>This project performs automatic tests on web application "farm-market" using JAVA, TestNG, Selenium WebDriver, POM and BDD (gherkin language).</p>
 
 <h3>Prerequisites</h3>
 Git
