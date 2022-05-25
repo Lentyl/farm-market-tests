@@ -13,7 +13,7 @@ Up to date Chrome<br>
 <p>The Farm-market application was written by Mariusz Podgorski, using tools such as: REACT, REDUX, TypeScript, Firebase, bootstrap.
 Database has been set up to run tests. Only the first run is reliable, following runs require manual deletion users from the database.</p>
 
-<p>App is hosted: <a href="https://farm-market-app-74e39.web.app">Farm-market</a></p>
+<p>App is hosted: <a href="https://farm-market-app-74e39.web.app">farm-market</a></p>
 
 
 <h3>Steps to run tests:</h3>
