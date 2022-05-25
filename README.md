@@ -1,7 +1,7 @@
 <b>Mariusz Podgorski</b>
-This project performs autocmatic tests on web application "farm-market" using JAVA, TestNG, Selenium WebDriver, POM and BDD (gherkin language).
+<p>This project performs autocmatic tests on web application "farm-market" using JAVA, TestNG, Selenium WebDriver, POM and BDD (gherkin language).</p>
 
-Prerequisites
+<h3>Prerequisites</h3>
 Git
 Terminal (cmdr)
 Maven
@@ -9,22 +9,19 @@ JAVA 8
 Up to date Chrome
 
 
-App description 
-The Farm-market application was written by Mariusz Podgorski, using tools such as:REACT, REDUX, TypeScript, Firebase, bootstrap.
-Database is set up to run tests. Only the first run is reliable, following runs require manual deletion of users from the database.
+<h3>App description</h3>
+<p>The Farm-market application was written by Mariusz Podgorski, using tools such as:REACT, REDUX, TypeScript, Firebase, bootstrap.
+Database is set up to run tests. Only the first run is reliable, following runs require manual deletion of users from the database.</p>
+
+<p>App is hosted: <li href="https://farm-market-app-74e39.web.app">Farm-market</li></p>
 
 
-App is hosted : https://farm-market-app-74e39.web.app
+<h3>steps to run tests:</h3>
+<p>- Open terminal.</p>
+<p>- Navigate to project directory: directory where pom.xml file is present.</p>
+<p>- Type: mvn clean.</p>
+<p>- Type: mvn test.</p>
 
-
-
-Open terminal
-Navigate to project directory: directory where is present pom.xml file.
-
-Type: mvn clean
-
-Type: mvn test
-
-Test results
-The run report will be available after run in the "reports" folder.
+<h3>Test results:</h3>
+<p>The run report will be available after run in the "reports" folder.</p>
 
