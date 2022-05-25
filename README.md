@@ -20,7 +20,7 @@ Database has been set up to run tests. Only the first run is reliable, following
 <p>- Open terminal.</p><br>
 <p>- Navigate to project directory: directory where pom.xml file is present.</p><br>
 <p>- Type: mvn clean.</p><br>
-<p>- Type: mvn test.</p><br>
+<p>- Type: mvn test.</p>
 
 <h3>Test results:</h3>
 <p>The run report will be available after performing the run in the "reports" folder.</p>
