@@ -1,4 +1,4 @@
-Mariusz Podgorski
+<b>Mariusz Podgorski</b>
 This project performs autocmatic tests on web application "farm-market" using JAVA, TestNG, Selenium WebDriver, POM and BDD (gherkin language).
 
 Prerequisites
