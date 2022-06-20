@@ -1,10 +1,10 @@
 @allAppFeatures @homePageFeatures
-Feature: Home Page features
+Feature: Home page features
 
   @checkAllLinks
   Scenario Outline: Check all links
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
 
     Examples: 
@@ -48,18 +48,18 @@ Feature: Home Page features
   @homePageProductAndSellerDetailsCheck
   Scenario Outline: Check seller, product details and cart icon number then Log out
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     * I log in with the correct credentials
     * I navigate to the home page
     When I type "<product>" name
     * I choose product
-    * I click on the product details button
+    * I click the product details button
     Then I am sent to the product seller details tab
     * I check if backward button works
-    * I click on the product details button
+    * I click the product details button
     * I add products to the cart, one of each kind
     Then I check, if cart logo number is updated correctly
-    * I click on log out button
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 

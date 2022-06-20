@@ -1,18 +1,18 @@
 @allAppFeatures @businessSignupPageFeatures
-Feature: Product Page features
+Feature: Product page features
 
   @businessSignUpWithoutMarkingConfirmationCheckbox
   Scenario Outline: Business sign up with empty Name field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    * I fill in credentials without marking confirmation checkbox
+    * I fill in credentials without ticking the confirmation checkbox
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -23,15 +23,15 @@ Feature: Product Page features
   @businessSignUpWithInvalidEmail
   Scenario Outline: Business sign up with invalid email
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with invalid email
+    When I fill in credentials using invalid email address
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -42,15 +42,15 @@ Feature: Product Page features
   @businessSignUpWithEmptyNameField
   Scenario Outline: Business sign up with empty Name field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty password field
+    When I fill in all credentials except the name field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product 
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -61,15 +61,15 @@ Feature: Product Page features
   @businessSignUpWithEmptyPasswordField
   Scenario Outline: Business sign up with empty password field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty Name field
+    When I fill in all credentials except the password field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product 
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I add product "<productName>"
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -80,15 +80,15 @@ Feature: Product Page features
   @businessSignUpWithEmptyEmailField
   Scenario Outline: Business sign up with empty email field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty email field
+    When I fill in all credentials except the email field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product 
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -99,15 +99,15 @@ Feature: Product Page features
   @businessSignUpWithPostecodeField
   Scenario Outline: Business sign up with empty postcode field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty postecode field
+    When I fill in all credentials except the postecode field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -118,15 +118,15 @@ Feature: Product Page features
   @businessSignUpWithCityField
   Scenario Outline: Business sign up with empty city field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty city field
+    When I fill in all credentials except the city field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -137,15 +137,15 @@ Feature: Product Page features
   @businessSignUpWithStreetField
   Scenario Outline: Business sign up with empty street field
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials with empty street field
+    When I fill in all credentials except the street field
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
     Then I check if I am logged out and there is log in dropdown menu
 
@@ -156,19 +156,19 @@ Feature: Product Page features
   @businessSignUpWithCorrectCredentials
   Scenario Outline: Business sign up with correct credentials
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
-    When I fill in credentials fields with correct data
+    When I fill in all credential fields with the correct data
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click the red cancel button to delete "<productName>" product
     Then "<productName>" disappears from the list
     * I add product "<productName>"
-    Then "<productName>" is added to seller offer, appears on the page
+    Then "<productName>" is added to seller offer, it appears on the page
     * I click submit button
-    * Accepts alert message
+    * Accept alert message
     Then I am signed in, confirmation inscription appears
-    * I click on log out button
+    * I click the log out button
     * I navigate to the home page by url
     Then I check if I am logged out and there is log in dropdown menu
     

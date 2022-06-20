@@ -28,7 +28,7 @@ public class CartPageSteps {
 		Assert.assertEquals("Twój koszyk jest pusty!", getText(cartPageEmptyCartHeader));
 	}
 	
-	@Then("Checks if price have correct {string}")
+	@Then("Check if price have correct {string}")
 	public void checks_if_price_have_correct_amount(String amount) {
 		Assert.assertEquals("Łączna kwota: "+amount+" zł", getText(cartPagePriceCounter));
 	}
@@ -58,17 +58,17 @@ public class CartPageSteps {
 		fillInRecipientsDetails(name);
 	}
 	
-	@Then("Checks if there is {string} warning sign")
+	@Then("Check if there is {string} warning sign")
 	public void checks_if_there_is_warning_sign(String name) throws InterruptedException {
 		Assert.assertTrue(errorMessageCheck(name));
 	}
 	
-	@And("Clicks on x button of this worning sign")
+	@And("Click x button of this worning sign")
 	public void clicks_on_x_button_of_this_worning_sign() {
 		click(cartPageDeliveryMethodWarningSignXButton);
 	}
 	
-	@Then("Checks name, house number, post code, town, email field")
+	@Then("Check name, house number, post code, town, email field")
 	public void checks_name_house_number_post_code_town_email_field() {
 		Assert.assertEquals( "Rafał", getAttribute(cartPageNameInput,"value"));
 		Assert.assertEquals("Kazimierza Wielkiego 17A/10", getAttribute(cartPageStreetInInput,"value"));

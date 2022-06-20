@@ -21,12 +21,12 @@ public class UserPanelPageSteps {
 		goToUserPanel(userStatus);
 	}
 	
-	@Then("Check if business panel isnt displaying")
+	@Then("Check if business panel is not displaying")
 	public void check_if_business_panel_isnt_displaying() {
 		Assert.assertFalse(isDisplayed(getElementByXpathText(userPanelUserDetailsField, "nazwa użytkownika")));
 	}
 	
-	@And("I click on the pencil icon button")
+	@And("I click the pencil icon button")
 	public void clicks_on_the_pencil_icon_button() {
 		click(userPanelPagePencilIconButton);
 	}
@@ -36,18 +36,18 @@ public class UserPanelPageSteps {
 		Assert.assertTrue(isDisplayed(userPanelPageConfirmButton)); 
 	}
 	
-	@And("I change town name on {string}")
+	@And("I change town name to {string}")
 	public void changes_town_name_on(String townName) {
 		clear(userPanelPageTownInput);
 		sendKeys(userPanelPageTownInput, townName); 
 	}
 	
-	@And("I click on confirm button")
+	@And("I click confirm button")
 	public void clicks_on_confirm_button() {
 		click(userPanelPageConfirmButton);
 	}
 	
-	@Then("Checks town warning  message content")
+	@Then("Check the town warning  message content")
 	public void checks_town_warning_message_content() {
 		Assert.assertEquals("Zmień wszystkie elementy adresu!", getText(userPanelPageWarningMessageHeading));
 	}
@@ -62,17 +62,17 @@ public class UserPanelPageSteps {
 		click(userPanelPageWarningMessageXButton);
 	}
 	
-	@And("I changes email")
+	@And("I change email")
 	public void changes_email() {
 		emailValueChange("ralf8@wp.pl"); 
 	}
 	
-	@Then("Checks if orders arent present")
+	@Then("I check if orders are present")
 	public void checks_if_there_is_any_order() {
 		Assert.assertEquals("Rafał nie masz żadnych zamówień.", getText(userPanelPageOrderHeader));
 	}
 	
-	@Then("I Check if header is correct")
+	@Then("I check if the header is correct")
 	public void checks_if_header_is_correct_and_order_is_present() {
 		Assert.assertEquals("Rafał twoje wszystkie zamówienia", getText(userPanelPageOrderHeader));
 	}
@@ -82,7 +82,7 @@ public class UserPanelPageSteps {
 		clickChosenListElement(userPanelOrderDetailsLink, 0);
 	}
 	
-	@Then("I go to order detail card and check order details")
+	@Then("I go to the order details card and check order details")
 	public void user_goes_to_order_detail_card_and_checks_order_details() throws InterruptedException {
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "łączna kwota: 80 zł"))); 
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "status zamówienia: realizowane"))); 
@@ -100,7 +100,7 @@ public class UserPanelPageSteps {
 		click(userPanelSellerDetailsButton);
 	}
 	
-	@Then("I Check seller details")
+	@Then("I check seller details")
 	public void check_seller_details() {
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "imię: Jarek"))); 
 		Assert.assertTrue(isDisplayed(getElementByXpathText(userPanelOrderDetailsElement, "e-mail: jarek@wp.pl"))); 

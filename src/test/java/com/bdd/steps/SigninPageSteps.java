@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 public class SigninPageSteps {
 	
-	@And("I sign in with correct credentials")
+	@And("I sign in with the correct credentials")
 	public void sign_in_with_correct_credential() {
 		signIn("Marcin", "marcin1988@gmail.com", "marcin1988");
 	}

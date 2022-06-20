@@ -1,10 +1,10 @@
 @allAppFeatures @productPageFeatures
-Feature: Product Page features
+Feature: Product page features
 
   @searchProduct
   Scenario Outline: Find product, apple
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
     When I type "<product>" name
     * I choose product
@@ -17,7 +17,7 @@ Feature: Product Page features
   @searchForProductNoOneHas
   Scenario Outline: Search for product that no one Have
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     Then I am sent to the "<pageName>" page
     When I type "<productNoOneHas>" name
     * I choose product
@@ -30,19 +30,19 @@ Feature: Product Page features
   @productPageAndSellerDetailsCheck
   Scenario Outline: Check seller, product details, Log out and cart icon number on home page
     Given I navigate to the application
-    When I click on the "<linkName>" link
+    When I click the "<linkName>" link
     * I log in with the correct credentials
-    When I click on the "<byLink>" link
+    When I click the "<byLink>" link
     Then I am sent to the "<pageName>" page
     When I type "<product>" name
     * I choose product
-    * I click on the product details button
+    * I click the product details button
     Then I am sent to the product seller details tab
     * I check if backward button works
-    * I click on the product details button
+    * I click the product details button
     * I add products to the cart, one of each kind
     Then I check, if cart logo number is updated correctly
-    * I click on log out button
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 

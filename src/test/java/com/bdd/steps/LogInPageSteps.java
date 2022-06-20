@@ -27,7 +27,7 @@ public class LoginPageSteps {
 		acceptAlert();
 	}
 	
-	@Then("I Check, if I am logged in")
+	@Then("I check, if I am logged in")
 	public void Check_if_logged_in() {
 		Assert.assertEquals("Witamy jesteś zalogowany.", getText(loginPageWelcomeInscription)); 
 	}

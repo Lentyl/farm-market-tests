@@ -1,5 +1,5 @@
 @allAppFeatures @cartPageFeatures
-Feature: Cart Page features
+Feature: Cart page features
 
   @addDeleteButtonsCheck
   Scenario: Add and delete items
@@ -9,17 +9,17 @@ Feature: Cart Page features
     Then I check if item is added
     * I delete all items
     Then I check that no item left
-    * I click on log out button
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
   @priceCounterCheck
   Scenario Outline: Price counter check
     Given I navigate to the application
     When I Log in, put products to cart and navigate to cart page
-    Then Checks if price have correct "<amount>"
+    Then Check if price have correct "<amount>"
     * I add first item
-    Then Checks if price have correct "<sum>"
-    * I click on log out button
+    Then Check if price have correct "<sum>"
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
@@ -32,9 +32,9 @@ Feature: Cart Page features
     When I Log in, put products to cart and navigate to cart page
     * Select the payment method
     * Press order button
-    Then Checks if there is "<name>" warning sign
-    * Clicks on x button of this worning sign
-    * I click on log out button
+    Then Check if there is "<name>" warning sign
+    * Click x button of this worning sign
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
@@ -45,8 +45,8 @@ Feature: Cart Page features
   Scenario: Buyers details filled in check
     Given I navigate to the application
     When I Log in, put products to cart and navigate to cart page
-    Then Checks name, house number, post code, town, email field
-    * I click on log out button
+    Then Check name, house number, post code, town, email field
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
   @recipientsDetailsErrorMessageCheck
@@ -57,8 +57,8 @@ Feature: Cart Page features
     * Select the payment method
     * Fill in the recipients details with blank "<name>" field
     * Press order button
-    Then Checks if there is "<name>" warning sign
-    * I click on log out button
+    Then Check if there is "<name>" warning sign
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu
 
     Examples: 
@@ -79,5 +79,5 @@ Feature: Cart Page features
     * Fill in telephone input
     * Press order button
     Then I check order confirmation text
-    * I click on log out button
+    * I click the log out button
     Then I check if I am logged out and there is log in dropdown menu

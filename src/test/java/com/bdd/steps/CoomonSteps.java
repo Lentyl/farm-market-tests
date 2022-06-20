@@ -35,7 +35,7 @@ public class CoomonSteps {
 		Assert.assertEquals("nazwa: jabłko", getText(homePageProductListItem));   
 	}
 	
-	@When ("I click on the {string} link")
+	@When ("I click the {string} link")
 	public void user_clicks_on_the_Link(String linkName) {
 		checkAllLinks(linkName);
 	}
@@ -60,7 +60,7 @@ public class CoomonSteps {
 		click(headerLogoLink);
 	}
 	
-	@And("I click on the product details button")
+	@And("I click the product details button")
 	public void clicks_on_the_product_details_button() {
 		click(productDetailsBytton);
 	}
@@ -85,17 +85,17 @@ public class CoomonSteps {
 		Assert.assertEquals("2", getText(headerCartLogoNumber));
 	}
 	
-	@And("Navigate to cart Page")
+	@And("Navigate to the cart page")
 	public void navigate_to_cart_page() {
 		click(headerCartLink);
 	}
 	
-	@And("I click on log out button")
+	@And("I click the log out button")
 	public void clicks_on_log_out_button() {
 	  click(headerLogoutButto);
 	}
 	
-	@And("Accepts alert message")
+	@And("Accept alert message")
 	public void Accept_alert_message() {
 		acceptAlert();
 	}
@@ -115,7 +115,7 @@ public class CoomonSteps {
 		click(getElementByXpathText(productCancelButton, name));
 	}
 	
-	@Then("{string} is added to seller offer, appears on the page")
+	@Then("{string} is added to seller offer, it appears on the page")
 	public void product_is_added_to_seller_offer_appears_on_the_page(String productName) {
 		Assert.assertEquals(productName, getText(getElementByXpathText(addedProduct, productName))); 
 	}
@@ -130,7 +130,7 @@ public class CoomonSteps {
 		Assert.assertFalse(isDisplayed(getElementByXpathText(addedProduct, productName))); 
 	}
 	
-	@Then("Go to user panel")
+	@Then("Go to the user panel")
 	public void go_to_user_panel() {
 		click(headerUserPanelLink);
 	}
