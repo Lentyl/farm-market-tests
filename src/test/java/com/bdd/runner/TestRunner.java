@@ -8,7 +8,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 features="src/test/resources/features",
 glue="com.bdd.steps",
 tags="@allAppFeatures",
-plugin={"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"},
+plugin={"pretty", "html:target/reports/cucumber-reports.html", "json:target/reports/cucumber-reports.json"},
 monochrome=true
 )
 

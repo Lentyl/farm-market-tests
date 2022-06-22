@@ -1,6 +1,6 @@
 package com.bdd.utils;
 
-import static com.bdd.utils.GlobalSelectors.*;
+
 import static com.bdd.variables.GlobalVariables.*;
 
 import java.util.List;
@@ -10,7 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 
 public class ReusableAndGlobalFunctionalities {
 	
@@ -134,73 +133,7 @@ public class ReusableAndGlobalFunctionalities {
 		gdriver.findElement(el).clear();
 	}
 
-	public static void headerAutocomplitChoyce() {
-		click(headerAutocompleteSearchedProduct);
-		click(headerSearchButton);
-		clear(headerAutocompleteInput);
-	}
-
-	public static void checkAllLinks(String linkName) {
-		switch (linkName) {
-		case "login":
-			goToLoginSignUpPage(linkName);
-			break;
-		case "signUp":
-			goToLoginSignUpPage(linkName);
-			break;
-		case "buy":
-			click(headerBuyLink);
-			break;
-		case "sell":
-			click(headerSellLink);
-			break;
-		case "cart":
-			click(headerCartLink);
-			break;
-		}
-	}
-
-	public static void checkAllPages(String pageName) {
-		switch (pageName) {
-		case "login":
-			Assert.assertEquals("https://farm-market-app-74e39.web.app/login", gdriver.getCurrentUrl());
-			break;
-		case "signUp":
-			Assert.assertEquals("https://farm-market-app-74e39.web.app/sign-up", gdriver.getCurrentUrl());
-			break;
-		case "products":
-			Assert.assertEquals("https://farm-market-app-74e39.web.app/products", gdriver.getCurrentUrl());
-			break;
-		case "businessSignUp":
-			Assert.assertEquals("https://farm-market-app-74e39.web.app/business-sign-up", gdriver.getCurrentUrl());
-			break;
-		case "cart":
-			Assert.assertEquals("https://farm-market-app-74e39.web.app/cart", gdriver.getCurrentUrl());
-			checkLogoLinks();
-			break;
-		}
-	}
-
-	public static void goToLoginSignUpPage(String page) {
-		click(headerLoginSignupDropdown);
-		if (page.equals("login")) {
-			click(headerLoginLink);
-		} else {
-			click(headerSignupLink);
-		}
-	}
-
-	public static void checkLogoLinks() {
-		click(headerLogoLink);
-		Assert.assertEquals("https://farm-market-app-74e39.web.app/", gdriver.getCurrentUrl());
-		click(headerCartLink);
-		click(headerLogoInscriptionLink);
-	}
-	
 	public static void goToUrl(String url) {
 		gdriver.navigate().to(url);
 	}
-	
-	
-
 }

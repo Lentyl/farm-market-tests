@@ -1,10 +1,11 @@
-package com.bdd.utils;
+package com.bdd.pages;
+
+import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 
 import org.openqa.selenium.By;
 
 
-public class GlobalSelectors {
-	
+public class BasePage {
 	//HEADER SELECTORS
 	public static By headerAutocompleteInput = By.className("product-autocomplete__input");	
 	public static By headerAutocompleteSearchedProduct = By.className("product-autocomplete__product");
@@ -28,4 +29,62 @@ public class GlobalSelectors {
 	public static By productCancelButton = By.xpath("//button[ancestor::div[contains(@class,'add-product__cancel-btn-container') and preceding-sibling::div[text()='#####']]]");
 	public static By addedProduct = By.xpath("//div[text()='#####']");
 	
+	public static void goToLoginSignUpPage(String page) {
+		click(headerLoginSignupDropdown);
+		if (page.equals("login")) {
+			click(headerLoginLink);
+		} else {
+			click(headerSignupLink);
+		}
+	}
+	
+	public static void headerAutocomplitChoyce() {
+		click(headerAutocompleteSearchedProduct);
+		click(headerSearchButton);
+		clear(headerAutocompleteInput);
+	}
+
+	public static void clickAllLinks(String linkName) {
+		switch (linkName) {
+		case "login":
+			goToLoginSignUpPage(linkName);
+			break;
+		case "signUp":
+			goToLoginSignUpPage(linkName);
+			break;
+		case "buy":
+			click(headerBuyLink);
+			break;
+		case "sell":
+			click(headerSellLink);
+			break;
+		case "cart":
+			click(headerCartLink);
+			break;
+		}
+	}
+
+	public static String getAllPagesUrl(String pageName) {
+		
+		String currentUrl = "";
+		
+		switch (pageName) {
+		case "login":
+			currentUrl = "https://farm-market-app-74e39.web.app/login";
+			break;
+		case "signUp":
+			currentUrl = "https://farm-market-app-74e39.web.app/sign-up";
+			break;
+		case "products":
+			currentUrl = "https://farm-market-app-74e39.web.app/products";
+			break;
+		case "businessSignUp":
+			currentUrl = "https://farm-market-app-74e39.web.app/business-sign-up";
+			break;
+		case "cart":
+			currentUrl = "https://farm-market-app-74e39.web.app/cart";
+			break;
+		}
+		return currentUrl;
+	}
 }

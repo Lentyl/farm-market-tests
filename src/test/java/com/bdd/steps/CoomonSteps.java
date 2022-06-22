@@ -1,12 +1,13 @@
 package com.bdd.steps;
 
 import static com.bdd.impl.AppAccess.*;
-import static com.bdd.utils.GlobalSelectors.*;
 import static com.bdd.utils.ReusableAndGlobalFunctionalities.*;
 import static com.bdd.variables.GlobalVariables.*;
 import static com.bdd.pages.BusinessSignupPage.addProduct;
 import static com.bdd.pages.CartPage.*;
-import static com.bdd.pages.HomePage.homePageProductListItem;
+
+import com.bdd.pages.HomePage;
+import com.bdd.pages.CartPage;
 
 
 import org.testng.Assert;
@@ -32,21 +33,22 @@ public class CoomonSteps {
 	
 	@Then("Product description appears on the page")
 	public void product_description_appears_on_the_page() {
-		Assert.assertEquals("nazwa: jabłko", getText(homePageProductListItem));   
+		Assert.assertEquals("nazwa: jabłko", getText(HomePage.productListItem));   
 	}
 	
 	@When ("I click the {string} link")
-	public void user_clicks_on_the_Link(String linkName) {
-		checkAllLinks(linkName);
+	public void click_the_Link(String linkName) {
+		clickAllLinks(linkName);
 	}
 	
 	@Then ("I am sent to the {string} page")
-	public void user_is_send_to_next_page(String pageName){
-		checkAllPages(pageName);
+	public void sent_to_next_page(String pageName){
+		Assert.assertEquals(getAllPagesUrl(pageName), gdriver.getCurrentUrl());
+		
 	}
 	
 	@When("I type {string} name")
-	public void user_types_product_name(String product) {
+	public void type_product_name(String product) {
 		sendKeys(headerAutocompleteInput, product);
 	}
 	
@@ -61,7 +63,7 @@ public class CoomonSteps {
 	}
 	
 	@And("I click the product details button")
-	public void clicks_on_the_product_details_button() {
+	public void click_the_product_details_button() {
 		click(productDetailsBytton);
 	}
 	
@@ -91,7 +93,7 @@ public class CoomonSteps {
 	}
 	
 	@And("I click the log out button")
-	public void clicks_on_log_out_button() {
+	public void click_log_out_button() {
 	  click(headerLogoutButto);
 	}
 	
@@ -101,7 +103,7 @@ public class CoomonSteps {
 	}
 	
 	@Then("I check if I am logged out and there is log in dropdown menu")
-	public void checks_if_logo_button_changed_on_sign_in_and_sign_up_dropdown_tab() {
+	public void checks_if_logged_out_and_there_is_log_in_dropdown_menu() {
 		Assert.assertEquals("Logowanie/rejestracja", getText(headerLoginSignupDropdown));
 	}
 	
@@ -111,12 +113,12 @@ public class CoomonSteps {
 	}
 	
 	@And("I click the red cancel button to delete {string} product")
-	public void user_clicks_red_cancel_button_to_delete_product(String name) {
+	public void click_red_cancel_button_to_delete_product(String name) {
 		click(getElementByXpathText(productCancelButton, name));
 	}
 	
 	@Then("{string} is added to seller offer, it appears on the page")
-	public void product_is_added_to_seller_offer_appears_on_the_page(String productName) {
+	public void product_is_added_to_seller_offer_it_appears_on_the_page(String productName) {
 		Assert.assertEquals(productName, getText(getElementByXpathText(addedProduct, productName))); 
 	}
 	
@@ -137,6 +139,6 @@ public class CoomonSteps {
 	
 	@Then("I check order confirmation text")
 	public void checks_order_confirmation_text() {
-		Assert.assertEquals("zamówienie wysłane", getText(cartPageConfirmationOrderMessage));
+		Assert.assertEquals("zamówienie wysłane", getText(CartPage.confirmationOrderMessage));
 	}	 
 }
