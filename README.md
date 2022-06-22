@@ -23,5 +23,5 @@ Database has been set up to run tests. Only the first run is reliable, following
 <p>- Type: mvn test.</p>
 
 <h3>Test results:</h3>
-<p>The run report will be available after performing the run in the "reports" folder.</p>
+<p>The run report will be available after performing the run in the "target/reports" folder.</p>
 
