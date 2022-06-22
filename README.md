@@ -24,4 +24,4 @@ Database has been set up to run tests. Only the first run is reliable, following
 
 <h3>Test results:</h3>
 <p>The run report will be available after performing the run in the "target/reports" folder.</p>
-<img src="https://mariusz-portfolio.netlify.app/static/media/diploma.0386ce69.pdf" alt="Girl in a jacket" width="500" height="600">
+<img src="[https://mariusz-portfolio.netlify.app/static/media/diploma.0386ce69.pdf](https://mariusz-portfolio.netlify.app/static/media/diploma.0386ce69.pdf)" alt="Girl in a jacket" width="500" height="600">
