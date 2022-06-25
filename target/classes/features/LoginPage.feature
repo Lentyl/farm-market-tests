@@ -25,7 +25,7 @@ Feature: Login page features
       | linkName |
       | login    |
 
-  @logInWithIncorrectEmail
+  @logInWithIncorrectPassword
   Scenario Outline: Log in with incorect password
     Given I navigate to the application
     When I click the "<linkName>" link
